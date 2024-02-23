@@ -1,0 +1,226 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "RandomExamGeneratorContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Context",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "RandomExamGenerator.DAL",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Answer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Choice]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Department]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EnrollsIn]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Exam]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ExamConfiguration]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ExamQuestions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Instructor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InstructorRole]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Question]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QuestionDifficulty]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QuestionType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Student]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TaughtIn]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Teaches]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Topic]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TopicQuestions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Track]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserAccount]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserAccountType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[AssignInstructorToCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[CorrectExam]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[CreateTopic]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[DeleteCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[DeleteInstructorToCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[DeleteTopic]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EnrollStudentInCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[ExamGeneration]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[InsertCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[ReadTopic]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_CreateStudentAnswer]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginAsInstructorWithHash]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginAsInstructorWithPassword]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginAsStudentWithHash]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginAsStudentWithPassword]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginWithHash]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_LoginWithPassword]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[Un_EnrollStudentInCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[UpdateCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[UpdateTopic]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[checkTimeConflict]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[FnS_SHA256NVARCHAR]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[ifEnroll]",
+         "ObjectType": 2
+      },
+      {
+         "Name": "[dbo].[ifTeach]",
+         "ObjectType": 2
+      }
+   ],
+   "UiHint": "osama-allam-pc.RandomExamGenerator.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": true,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": true,
+   "UseNodaTime": false,
+   "UseNullableReferences": true,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": true,
+   "UseT4": false
+}
