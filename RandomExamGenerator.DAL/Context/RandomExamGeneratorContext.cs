@@ -9,11 +9,34 @@ namespace RandomExamGenerator.DAL.Context;
 
 public partial class RandomExamGeneratorContext : DbContext
 {
-    public RandomExamGeneratorContext()
+    private static RandomExamGeneratorContext? instance;
+
+    public static RandomExamGeneratorContext Context(DbContextOptions<RandomExamGeneratorContext>? options = null)
+    {
+        if(instance == null)
+        {
+            if(options == null)
+            {
+                instance = new RandomExamGeneratorContext();
+            }
+            else
+            {
+                instance = new RandomExamGeneratorContext(options);
+            }
+        }
+        return instance;
+    }
+
+    static RandomExamGeneratorContext()
+    {
+        instance = null;
+    }
+
+    protected RandomExamGeneratorContext()
     {
     }
 
-    public RandomExamGeneratorContext(DbContextOptions<RandomExamGeneratorContext> options)
+    protected RandomExamGeneratorContext(DbContextOptions<RandomExamGeneratorContext> options)
         : base(options)
     {
     }
@@ -63,7 +86,7 @@ public partial class RandomExamGeneratorContext : DbContext
     public virtual DbSet<UserAccountType> UserAccountTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=RandomExamGenerator;Integrated Security=True;Encrypt=False", x => x.UseNetTopologySuite());
+        => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=RandomExamGenerator;Integrated Security=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
