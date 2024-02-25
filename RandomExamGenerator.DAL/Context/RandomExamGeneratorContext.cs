@@ -9,14 +9,6 @@ namespace RandomExamGenerator.DAL.Context;
 
 public partial class RandomExamGeneratorContext : DbContext
 {
-    public RandomExamGeneratorContext()
-    {
-    }
-
-    public RandomExamGeneratorContext(DbContextOptions<RandomExamGeneratorContext> options)
-        : base(options)
-    {
-    }
 
     public virtual DbSet<Answer> Answers { get; set; }
 

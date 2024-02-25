@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RandomExamGenerator.BLL\RandomExamGenerator.BLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="ManageInstructors.cs">
       <SubType>Form</SubType>
     </Compile>
