@@ -13,24 +13,49 @@ namespace RandomExamGenerator.DAL.Context
     public partial interface IRandomExamGeneratorContextProcedures
     {
         Task<int> AssignInstructorToCourseAsync(int? InstructorID, int? CourseID, DateOnly? StDate, DateOnly? ENDate, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> checkStudentHaveExamAsync(int? crsId, int? studId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<CorrectExamResult>> CorrectExamAsync(int? ExamID, int? StudentID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> CreateTopicAsync(int? CourseID, string TopicName, int? InstID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteCourseAsync(string CourseName, int? CourseCode, int? UserID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteInstructorToCourseAsync(int? InstructorID, int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> DeleteStudentAsync(int? IDToSelect, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteTopicAsync(int? TopicID, int? CourseID, string TopicName, int? InstID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> EnrollStudentInCourseAsync(int? InstructorId, int? StudentId, int? CourseId, bool? CourseAC, DateOnly? EnrDate, DateOnly? StDate, DateOnly? EnDate, bool? PassSatus, bool? IsCorrec, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<ExamGenerationResult>> ExamGenerationAsync(int? crsId, int? studID, int? instID, int? totalTime, DateTime? scheduledTime, double? successPrecent, int? easyNo, int? mediamNo, int? hardNo, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllCoursesForStudentResult>> GetAllCoursesForStudentAsync(int? StudentID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetChoicesForQuestionResult>> GetChoicesForQuestionAsync(int? QuestionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetCoursesTaughtByInstructorResult>> GetCoursesTaughtByInstructorAsync(int? InstructorId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetExamResult>> GetExamAsync(int? CourseID, int? StudentID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetExamHistoryResult>> GetExamHistoryAsync(int? ExamID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetExamInfoForStudentResult>> GetExamInfoForStudentAsync(int? StudentID, int? courseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> GetExamQuestionsNumAsync(int? ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetQuestionsForExamResult>> GetQuestionsForExamAsync(int? ExamID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetStudentAnswerInExamResult>> GetStudentAnswerInExamAsync(int? studentID, int? examID, int? questionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetStudentCoursesResult>> GetStudentCoursesAsync(int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetTotalTimeForExamResult>> GetTotalTimeForExamAsync(int? ExamID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> insertChoiceAsync(int? qId, int? orderId, string body, bool? isCorrect, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> InsertCourseAsync(string CourseName, int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> insertNewQuestionAsync(string type, int? modelAnswer, string difficulty, string header, int? courseID, int? points, OutputParameter<int?> QuestionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<ReadTopicResult>> ReadTopicAsync(int? CourseID, int? InstID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SelectStudentResult>> SelectStudentAsync(int? IDToSelect, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SelectStudentsResult>> SelectStudentsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SelectTopicResult>> SelectTopicAsync(int? IDToSelect, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SelectTopicsResult>> SelectTopicsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_CreateStudentAnswerResult>> SP_CreateStudentAnswerAsync(DataTable StudentAnswerList, int? StudentID, int? ExamID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_ExamQuestionsResult>> SP_ExamQuestionsAsync(int? exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_GetCoursesByInstructorResult>> SP_GetCoursesByInstructorAsync(int? InstructorID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_GetStudentGradesResult>> SP_GetStudentGradesAsync(int? StudentID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsInstructorWithHashResult>> SP_LoginAsInstructorWithHashAsync(string UserName, string PasswordHash, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsInstructorWithPasswordResult>> SP_LoginAsInstructorWithPasswordAsync(string UserName, string Password, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsStudentWithHashResult>> SP_LoginAsStudentWithHashAsync(string UserName, string PasswordHash, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsStudentWithPasswordResult>> SP_LoginAsStudentWithPasswordAsync(string UserName, string Password, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginWithHashResult>> SP_LoginWithHashAsync(string UserName, string PasswordHash, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginWithPasswordResult>> SP_LoginWithPasswordAsync(string UserName, string Password, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_StudentAnswersResult>> SP_StudentAnswersAsync(int? exam_id, int? stud_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_TopicesInCoursesResult>> SP_TopicesInCoursesAsync(int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> Un_EnrollStudentInCourseAsync(int? InstructorId, int? StudentId, int? CourseId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> UpdateCourseAsync(string CourseName, int? CourseCode, int? UserID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> UpdateStudentAsync(int? IDToSelect, string NewName, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> UpdateTopicAsync(int? TopicID, int? CourseID, string NewTopicName, int? InstID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
     }
 }

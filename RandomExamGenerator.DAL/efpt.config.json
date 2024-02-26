@@ -108,6 +108,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[checkStudentHaveExam]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[CorrectExam]",
          "ObjectType": 1
       },
@@ -124,6 +128,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[DeleteStudent]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[DeleteTopic]",
          "ObjectType": 1
       },
@@ -136,7 +144,59 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[GetAllCoursesForStudent]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetChoicesForQuestion]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetCoursesTaughtByInstructor]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetExam]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetExamHistory]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetExamInfoForStudent]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetExamQuestionsNum]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetQuestionsForExam]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetStudentAnswerInExam]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetStudentCourses]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetTotalTimeForExam]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[insertChoice]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[InsertCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[insertNewQuestion]",
          "ObjectType": 1
       },
       {
@@ -144,7 +204,35 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[SelectStudent]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SelectStudents]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SelectTopic]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SelectTopics]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[SP_CreateStudentAnswer]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_ExamQuestions]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_GetCoursesByInstructor]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_GetStudentGrades]",
          "ObjectType": 1
       },
       {
@@ -172,11 +260,23 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[SP_StudentAnswers]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_TopicesInCourses]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[Un_EnrollStudentInCourse]",
          "ObjectType": 1
       },
       {
          "Name": "[dbo].[UpdateCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[UpdateStudent]",
          "ObjectType": 1
       },
       {
