@@ -1,0 +1,9 @@
+dbo.Answer
+dbo.Choice
+dbo.Exam
+dbo.ExamConfiguration
+dbo.ExamQuestions
+dbo.Question
+dbo.QuestionDifficulty
+dbo.QuestionType
+dbo.TopicQuestion
