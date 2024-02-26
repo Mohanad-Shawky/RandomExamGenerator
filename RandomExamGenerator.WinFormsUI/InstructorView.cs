@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RandomExamGenerator.WinFormsUI;
-using RandomExamGenerator.DAL.Management;
+using RandomExamGenerator.BLL;
 using RandomExamGenerator.DAL.Models;
 using System.Numerics;
 

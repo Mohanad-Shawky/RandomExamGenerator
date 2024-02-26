@@ -9,6 +9,8 @@ namespace RandomExamGenerator.WinFormsUI
 
         private LoginSession? session;
 
+        private StudentCourses studentCourses;
+
         public Login()
         {
             InitializeComponent();
@@ -77,6 +79,10 @@ namespace RandomExamGenerator.WinFormsUI
                     session = await LoginSession.LoginAsync(txtUserName.Text.Trim(), txtPassword.Text.Trim());
                     MessageBox.Show($"UserID = {session.Account?.Id}");
                     LoginSession.Clean();
+
+                    studentCourses = new StudentCourses();
+
+
                 }
                 catch (UserNotFoundException)
                 {

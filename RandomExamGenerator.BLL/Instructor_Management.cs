@@ -13,7 +13,7 @@ using Newtonsoft.Json.Linq;
 using System.Security.Cryptography;
 using Azure;
 
-namespace RandomExamGenerator.DAL.Management
+namespace RandomExamGenerator.BLL
 {
     public class Instructor_Management
     {

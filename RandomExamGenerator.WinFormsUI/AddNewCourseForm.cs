@@ -1,4 +1,4 @@
-﻿using RandomExamGenerator.DAL.Management;
+﻿using RandomExamGenerator.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

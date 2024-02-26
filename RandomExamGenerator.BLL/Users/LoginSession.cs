@@ -9,6 +9,7 @@ using RandomExamGenerator.DAL.Models;
 using RandomExamGenerator.DAL.Enums;
 using RandomExamGenerator.DAL.Context;
 using RandomExamGenerator.BLL.Exceptions;
+using RandomExamGenerator.BLL.Enums;
 
 namespace RandomExamGenerator.BLL.Users
 {
@@ -20,8 +21,24 @@ namespace RandomExamGenerator.BLL.Users
 
         public Student? StudentUser { get; set; }
 
+        public SessionUserType GetSessionUserType()
+        {
+            if(StudentUser != null)
+            {
+                return SessionUserType.Student;
+            }
+            else if(InstructorUser != null)
+            {
+                return SessionUserType.Instructor;
+            }
+            else
+            {
+                return SessionUserType.NotLoggedIn;
+            }
+        }
 
-        private static RandomExamGeneratorContext context = new RandomExamGeneratorContext();
+
+        private static RandomExamGeneratorContext? context;
 
         private static LoginSession? Session;
 
@@ -30,6 +47,11 @@ namespace RandomExamGenerator.BLL.Users
             if (Session == null)
             {
                 OutputParameter<int> r = new();
+
+                if(context == null)
+                {
+                    context = new();
+                }
 
                 var procedures = new RandomExamGeneratorContextProcedures(context);
 
@@ -94,15 +116,24 @@ namespace RandomExamGenerator.BLL.Users
             return Session;
         }
 
+
+        public static LoginSession? GetSession()
+        {
+            return Session;
+        }
+
+
         public static void Terminate()
         {
             Session = null;
-            context.Dispose();
+            context?.Dispose();
+            context = null;
         }
 
         public static void Clean()
         {
-            context.Dispose();
+            context?.Dispose();
+            context = null;
         }
 
         protected LoginSession()

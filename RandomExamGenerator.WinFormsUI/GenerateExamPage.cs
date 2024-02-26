@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Azure.Core;
-using RandomExamGenerator.DAL.Management;
+using RandomExamGenerator.BLL;
 using RandomExamGenerator.WinFormsUI;
 namespace RandomExamGenerator.WinFormsUI
 {

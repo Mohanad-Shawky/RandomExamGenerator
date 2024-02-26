@@ -1,5 +1,7 @@
 ﻿using NuGet.Protocol.Core.Types;
 using RandomExamGenerator.BLL;
+using RandomExamGenerator.BLL.Enums;
+using RandomExamGenerator.BLL.Users;
 using RandomExamGenerator.DAL.Context;
 using RandomExamGenerator.DAL.Models;
 using System;
@@ -17,11 +19,17 @@ namespace RandomExamGenerator.WinFormsUI
 {
     public partial class StudentCourses : Form
     {
-        int StudentID = 9;
+        int StudentID = 0;
         StudentCourse studentCourse = new StudentCourse();
+        LoginSession? Session;
         public StudentCourses()
         {
             InitializeComponent();
+            Session = LoginSession.GetSession();
+            if(Session != null && Session.GetSessionUserType() == SessionUserType.Student)
+            {
+                StudentID = Session.StudentUser?.Id ?? 0;
+            }
         }
 
         private async void StudentCourses_Load(object sender, EventArgs e)

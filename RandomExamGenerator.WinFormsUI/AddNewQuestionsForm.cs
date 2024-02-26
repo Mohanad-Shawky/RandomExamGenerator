@@ -1,5 +1,5 @@
 ﻿using NuGet.Protocol.Plugins;
-using RandomExamGenerator.DAL.Management;
+using RandomExamGenerator.BLL;
 using RandomExamGenerator.DAL.Models;
 using System;
 using System.Collections.Generic;

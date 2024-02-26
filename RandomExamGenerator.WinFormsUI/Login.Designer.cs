@@ -43,9 +43,9 @@
             // 
             lblLoginTitle.AutoSize = true;
             lblLoginTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblLoginTitle.Location = new Point(305, 39);
+            lblLoginTitle.Location = new Point(267, 29);
             lblLoginTitle.Name = "lblLoginTitle";
-            lblLoginTitle.Size = new Size(191, 46);
+            lblLoginTitle.Size = new Size(154, 37);
             lblLoginTitle.TabIndex = 0;
             lblLoginTitle.Text = "User Login";
             // 
@@ -53,9 +53,9 @@
             // 
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblUserName.Location = new Point(202, 184);
+            lblUserName.Location = new Point(177, 138);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(127, 30);
+            lblUserName.Size = new Size(105, 25);
             lblUserName.TabIndex = 1;
             lblUserName.Text = "User Name";
             // 
@@ -63,27 +63,29 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblPassword.Location = new Point(203, 253);
+            lblPassword.Location = new Point(178, 190);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(112, 30);
+            lblPassword.Size = new Size(92, 25);
             lblPassword.TabIndex = 2;
             lblPassword.Text = "Password";
             // 
             // txtUserName
             // 
             txtUserName.Font = new Font("Segoe UI", 13F);
-            txtUserName.Location = new Point(343, 181);
+            txtUserName.Location = new Point(300, 136);
+            txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(256, 36);
+            txtUserName.Size = new Size(224, 31);
             txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 13F);
-            txtPassword.Location = new Point(342, 250);
+            txtPassword.Location = new Point(299, 188);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(256, 36);
+            txtPassword.Size = new Size(224, 31);
             txtPassword.TabIndex = 1;
             // 
             // btnClear
@@ -91,9 +93,10 @@
             btnClear.BackColor = Color.DarkGray;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            btnClear.Location = new Point(677, 389);
+            btnClear.Location = new Point(592, 292);
+            btnClear.Margin = new Padding(3, 2, 3, 2);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(111, 49);
+            btnClear.Size = new Size(97, 37);
             btnClear.TabIndex = 3;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
@@ -108,9 +111,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(329, 315);
+            btnLogin.Location = new Point(288, 236);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(143, 49);
+            btnLogin.Size = new Size(125, 37);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -126,10 +130,10 @@
             btnCloseApp.FlatAppearance.MouseOverBackColor = Color.LightCoral;
             btnCloseApp.FlatStyle = FlatStyle.Flat;
             btnCloseApp.Font = new Font("Open Sans", 13.2000008F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnCloseApp.Location = new Point(753, 12);
+            btnCloseApp.Location = new Point(659, 9);
             btnCloseApp.Margin = new Padding(0);
             btnCloseApp.Name = "btnCloseApp";
-            btnCloseApp.Size = new Size(35, 35);
+            btnCloseApp.Size = new Size(31, 26);
             btnCloseApp.TabIndex = 4;
             btnCloseApp.Text = "X";
             btnCloseApp.UseVisualStyleBackColor = false;
@@ -145,11 +149,11 @@
             btnMinimize.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
             btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Font = new Font("Wide Latin", 13F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnMinimize.Location = new Point(712, 9);
+            btnMinimize.Font = new Font("Wide Latin", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnMinimize.Location = new Point(623, 7);
             btnMinimize.Margin = new Padding(0);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(35, 35);
+            btnMinimize.Size = new Size(31, 26);
             btnMinimize.TabIndex = 5;
             btnMinimize.Text = "_";
             btnMinimize.UseVisualStyleBackColor = false;
@@ -157,9 +161,9 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnMinimize);
             Controls.Add(btnCloseApp);
             Controls.Add(btnLogin);
@@ -170,6 +174,7 @@
             Controls.Add(lblUserName);
             Controls.Add(lblLoginTitle);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
