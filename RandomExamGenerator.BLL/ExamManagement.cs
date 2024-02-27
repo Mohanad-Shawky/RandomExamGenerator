@@ -1,4 +1,6 @@
-﻿using RandomExamGenerator.DAL.Context;
+﻿// Ignore Spelling: BLL Questionid
+
+using RandomExamGenerator.DAL.Context;
 using RandomExamGenerator.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -64,7 +66,7 @@ namespace RandomExamGenerator.BLL
         public Task<List<CorrectExamResult>> CorrectExam(int ExamID , int StudentID)
         {
             return ContextProcedures.CorrectExamAsync(ExamID, StudentID);
-             
+
         }
         public void SaveChanges()
         {

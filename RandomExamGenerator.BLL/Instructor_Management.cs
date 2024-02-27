@@ -20,7 +20,7 @@ namespace RandomExamGenerator.BLL
 
         public static RandomExamGeneratorContext dbManager=new();
 
-        public static Dictionary<Course, List<GetCoursesTaughtByInstructorResult>> instCourseStudents(int instId)
+        public static Dictionary<Course, List<GetCoursesTaughtByInstructorResult>>? instCourseStudents(int instId)
         {
             var courseStudentsMap = new Dictionary<Course, List<GetCoursesTaughtByInstructorResult>>();
             try
@@ -38,7 +38,7 @@ namespace RandomExamGenerator.BLL
                     }
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 return null;
             }
@@ -54,7 +54,7 @@ namespace RandomExamGenerator.BLL
                                                        new SqlParameter("@courseid", cId),
                                                        new SqlParameter("@courseName", newCourseName));
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }
@@ -88,7 +88,7 @@ namespace RandomExamGenerator.BLL
                     else ifSucces = false;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
@@ -113,7 +113,7 @@ namespace RandomExamGenerator.BLL
                     questionIdParam);
                 return (int)questionIdParam.Value;
             }
-            catch(Exception ex)
+            catch
             {
                 return -1;
             }
@@ -131,7 +131,7 @@ namespace RandomExamGenerator.BLL
                      new SqlParameter("@isCorrect", isCorrect));
                 return true;
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
 
@@ -147,7 +147,7 @@ namespace RandomExamGenerator.BLL
                      , new SqlParameter("@courseName", courseName),
                      new SqlParameter("@instId", instId));
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }
@@ -174,7 +174,7 @@ namespace RandomExamGenerator.BLL
                );
 
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

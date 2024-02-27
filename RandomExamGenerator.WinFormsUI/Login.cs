@@ -95,9 +95,8 @@ namespace RandomExamGenerator.WinFormsUI
 
                     LoginSession.Clean();
                     studentCourses = new StudentCourses();
-
-
-
+                    studentCourses.Show();
+                    Hide();
                 }
                 catch (UserNotFoundException)
                 {
