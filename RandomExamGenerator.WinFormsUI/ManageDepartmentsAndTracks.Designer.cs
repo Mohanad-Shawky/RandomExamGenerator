@@ -33,7 +33,6 @@
             mangeToolStripMenuItem = new ToolStripMenuItem();
             loadToolStripMenuItem = new ToolStripMenuItem();
             loadDepartmnetToolStripMenuItem = new ToolStripMenuItem();
-            loadTracksToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
             insertTrackToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -45,10 +44,11 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 28);
+            dataGridView1.Location = new Point(0, 24);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(800, 422);
+            dataGridView1.Size = new Size(700, 314);
             dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
@@ -58,7 +58,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mangeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(700, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,53 +67,47 @@
             // 
             mangeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem, saveToolStripMenuItem, insertTrackToolStripMenuItem });
             mangeToolStripMenuItem.Name = "mangeToolStripMenuItem";
-            mangeToolStripMenuItem.Size = new Size(69, 24);
+            mangeToolStripMenuItem.Size = new Size(56, 20);
             mangeToolStripMenuItem.Text = "Mange";
             // 
             // loadToolStripMenuItem
             // 
-            loadToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadDepartmnetToolStripMenuItem, loadTracksToolStripMenuItem });
+            loadToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadDepartmnetToolStripMenuItem });
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new Size(212, 26);
+            loadToolStripMenuItem.Size = new Size(180, 22);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
             // loadDepartmnetToolStripMenuItem
             // 
             loadDepartmnetToolStripMenuItem.Name = "loadDepartmnetToolStripMenuItem";
-            loadDepartmnetToolStripMenuItem.Size = new Size(215, 26);
+            loadDepartmnetToolStripMenuItem.Size = new Size(180, 22);
             loadDepartmnetToolStripMenuItem.Text = "Load Departments";
             loadDepartmnetToolStripMenuItem.Click += loadDepartmentToolStripMenuItem_Click;
-            // 
-            // loadTracksToolStripMenuItem
-            // 
-            loadTracksToolStripMenuItem.Name = "loadTracksToolStripMenuItem";
-            loadTracksToolStripMenuItem.Size = new Size(215, 26);
-            loadTracksToolStripMenuItem.Text = "Load Tracks";
-            loadTracksToolStripMenuItem.Click += loadTracksToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(212, 26);
+            saveToolStripMenuItem.Size = new Size(180, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // insertTrackToolStripMenuItem
             // 
             insertTrackToolStripMenuItem.Name = "insertTrackToolStripMenuItem";
-            insertTrackToolStripMenuItem.Size = new Size(212, 26);
+            insertTrackToolStripMenuItem.Size = new Size(180, 22);
             insertTrackToolStripMenuItem.Text = "Insert Department";
             insertTrackToolStripMenuItem.Click += insertTrackToolStripMenuItem_Click;
             // 
             // ManageDepartmentsAndTracks
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ManageDepartmentsAndTracks";
             Text = "ManageDepartmentsAndTracks";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -131,6 +126,5 @@
         private ToolStripMenuItem saveToolStripMenuItem;
         private ToolStripMenuItem insertTrackToolStripMenuItem;
         private ToolStripMenuItem loadDepartmnetToolStripMenuItem;
-        private ToolStripMenuItem loadTracksToolStripMenuItem;
     }
 }

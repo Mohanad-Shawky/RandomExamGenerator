@@ -16,7 +16,6 @@ namespace RandomExamGenerator.WinFormsUI
     public partial class ManageDepartmentsAndTracks : Form
     {
         public BindingList<Department> departments;
-        public BindingList<Track> tracks;
         public ManageDepartmentsAndTracks()
         {
             InitializeComponent();
@@ -32,7 +31,7 @@ namespace RandomExamGenerator.WinFormsUI
             try
             {
 
-                TrackController.SaveAllTracks();
+                DepartmentController.SaveAllTracks();
 
 
                 MessageBox.Show("Data Save");
@@ -50,44 +49,14 @@ namespace RandomExamGenerator.WinFormsUI
             department.ShowDialog();
         }
 
-        private void loadTracksToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Text = "Table Tracks";
-            //  MessageBox.Show("Loading");
-            TrackController.Ctxt.Tracks.Load();
-            tracks = TrackController.Ctxt.Tracks.Local.ToBindingList();
-            dataGridView1.DataSource = tracks;
-            departments = new BindingList<Department>(TrackController.GetAllDepartment()); ;
-            DataGridViewComboBoxColumn NewColumn = new DataGridViewComboBoxColumn();
 
-
-            NewColumn.DisplayMember = "Name";
-            NewColumn.DataSource = departments;
-            NewColumn.ValueMember = "Id";
-            NewColumn.Name = "Department";
-            NewColumn.DataPropertyName = "DepartmentId";
-
-            dataGridView1.Columns.Add(NewColumn);
-
-
-            dataGridView1.Columns[0].ReadOnly = true;
-
-            dataGridView1.Columns[2].Visible = false;
-
-            dataGridView1.Columns[3].Visible = false;
-            dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[5].Visible = false;
-
-            MessageBox.Show("Don't Insert ID For Track", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
 
         private void loadDepartmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Text = "Table Department";
 
-            TrackController.Ctxt.Departments.Load();
-            departments = TrackController.Ctxt.Departments.Local.ToBindingList();
+            DepartmentController.Ctxt.Departments.Load();
+            departments = DepartmentController.Ctxt.Departments.Local.ToBindingList();
             dataGridView1.DataSource = departments;
             DataGridViewComboBoxColumn studentColumn = new DataGridViewComboBoxColumn();
 
@@ -95,11 +64,13 @@ namespace RandomExamGenerator.WinFormsUI
             studentColumn.DataPropertyName = "ID";
             dataGridView1.Columns[0].ReadOnly = true;
 
-            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[1].Visible = true;
 
+            dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
             MessageBox.Show("Don't Insert ID For Department", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

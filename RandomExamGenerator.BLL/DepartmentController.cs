@@ -16,4 +16,17 @@ public class DepartmentController:BaseController
         return depts;
     }
 
+    public static List<Department> GetAllDepartment()
+    {
+        return Ctxt.Departments.ToList();
+
+    }
+
+    public static void SaveAllTracks()
+    {
+
+        Ctxt.SaveChanges();
+
+    }
+
 }

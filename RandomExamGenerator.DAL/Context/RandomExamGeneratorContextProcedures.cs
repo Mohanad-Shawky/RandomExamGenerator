@@ -36,10 +36,10 @@ namespace RandomExamGenerator.DAL.Context
         {
             modelBuilder.Entity<CorrectExamResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<ExamGenerationResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<Course>().HasNoKey().ToView(null);
+            modelBuilder.Entity<GetAllCoursesResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetAllCoursesForStudentResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<Department>().HasNoKey().ToView(null);
-            modelBuilder.Entity<Instructor>().HasNoKey().ToView(null);
+            modelBuilder.Entity<GetAllDepartmentsResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<GetAllInstructorsResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetChoicesForQuestionResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetCoursesTaughtByInstructorResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetExamResult>().HasNoKey().ToView(null);
