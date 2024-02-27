@@ -9,7 +9,7 @@ namespace RandomExamGenerator.WinFormsUI
 
         private LoginSession? session;
 
-        private StudentCourses studentCourses;
+        private StudentCourses? studentCourses;
 
         public Login()
         {
@@ -18,7 +18,21 @@ namespace RandomExamGenerator.WinFormsUI
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(session == null)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                var answer = MessageBox.Show(this, "Are you sure you want to logout and close?", "Logout?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if(answer == DialogResult.Yes)
+                {
+                    LoginSession.Terminate();
+                    session = null;
+                    studentCourses = null;
+                    Application.Exit();
+                }
+            }
         }
 
         private void btnCloseApp_MouseDown(object sender, MouseEventArgs e)
@@ -57,12 +71,12 @@ namespace RandomExamGenerator.WinFormsUI
 
             if (string.IsNullOrEmpty(txtUserName.Text.Trim()) && string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show($"Login failed: You forgot to Yourself");
+                MessageBox.Show($"Login failed: You forgot to Enter both the User Name and Password");
                 return;
             }
             if (string.IsNullOrEmpty(txtUserName.Text.Trim()))
             {
-                MessageBox.Show("You forgot the UserName");
+                MessageBox.Show($"Login failed: You forgot the UserName");
                 return;
             }
 
@@ -77,32 +91,33 @@ namespace RandomExamGenerator.WinFormsUI
                 try
                 {
                     session = await LoginSession.LoginAsync(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-                    MessageBox.Show($"UserID = {session.Account?.Id}");
-                    LoginSession.Clean();
+                    MessageBox.Show($"Successfully Logged In As {session.GetSessionUserType().ToString()} {session.Account?.UserName}", "Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    LoginSession.Clean();
                     studentCourses = new StudentCourses();
+
 
 
                 }
                 catch (UserNotFoundException)
                 {
-                    MessageBox.Show("Cannot find this user, Try Again!");
+                    MessageBox.Show("Cannot find this user, Try Again!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 catch (DataCorruptionException)
                 {
-                    MessageBox.Show("Data Corrupted, M3lesh!");
+                    MessageBox.Show("Data corrupted, contact your Instructor!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
-                catch (MultipleResultsWithIdentityException ex)
+                catch (MultipleResultsWithIdentityException)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Ambiguous User Credentials!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
-                catch (IntegrityException ex)
+                catch (IntegrityException)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Looks like there is no student profile for this user!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 catch
                 {
-                    MessageBox.Show("Something Went Wrong, Contact Your Provider");
+                    MessageBox.Show("Something Went Wrong, Contact Your Instructor", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 finally
                 {
