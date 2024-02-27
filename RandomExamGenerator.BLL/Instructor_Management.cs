@@ -20,9 +20,9 @@ namespace RandomExamGenerator.BLL
 
         public static RandomExamGeneratorContext dbManager=new();
 
-        public static Dictionary<Course, List<GetCoursesTaughtByInstructorResult>>? instCourseStudents(int instId)
+        public static Dictionary<Course, List<GetStudentCoursesResult>>? instCourseStudents(int instId)
         {
-            var courseStudentsMap = new Dictionary<Course, List<GetCoursesTaughtByInstructorResult>>();
+            var courseStudentsMap = new Dictionary<Course, List<GetStudentCoursesResult>>();
             try
             {
                 var coursesTaughtByInstructor = dbManager.Set<Course>().FromSqlRaw("EXEC GetCoursesTaughtByInstructor @InstructorId", new SqlParameter("@InstructorId", instId)).ToList();
@@ -31,7 +31,7 @@ namespace RandomExamGenerator.BLL
                 {
                     using (var dbManager = new RandomExamGeneratorContext())
                     {
-                        var studentsEnrolledInCourse = dbManager.Database.SqlQueryRaw<GetCoursesTaughtByInstructorResult>(
+                        var studentsEnrolledInCourse = dbManager.Database.SqlQueryRaw<GetStudentCoursesResult>(
                                                         "GetStudentCourses @CourseID",
                                                         new SqlParameter("@CourseID", course.Id)).AsNoTracking().ToList();
                         courseStudentsMap.Add(course, studentsEnrolledInCourse);

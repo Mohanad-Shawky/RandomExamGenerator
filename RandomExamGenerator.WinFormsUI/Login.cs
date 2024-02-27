@@ -11,6 +11,7 @@ namespace RandomExamGenerator.WinFormsUI
         private LoginSession? session;
 
         private StudentCourses? studentCourses;
+        private InstructorView? instructorView;
 
         public Login()
         {
@@ -106,6 +107,10 @@ namespace RandomExamGenerator.WinFormsUI
                     {
                         LoginSession.Clean();
                         // TODO: Redirect to instructor profile
+                        Hide();
+                        instructorView = new InstructorView(session.Account.Id);
+                        instructorView.ShowDialog();
+                        Show();
                     }
                     else
                     {

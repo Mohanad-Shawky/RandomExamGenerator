@@ -20,7 +20,7 @@ namespace RandomExamGenerator.WinFormsUI
 
         private int studId;
         private int instId;
-        private Dictionary<Course, List<GetCoursesTaughtByInstructorResult>> courseStudentsMap;
+        private Dictionary<Course, List<GetStudentCoursesResult>> courseStudentsMap;
         private BindingSource bindingSourceCourse;
 
         public InstructorView(int _instId)
