@@ -16,5 +16,12 @@ namespace RandomExamGenerator.BLL
             Ctxt.SaveChanges();
 
         }
+
+        public static void AddDepartment(Department department)
+        {
+
+            Ctxt.Departments.Add(department);
+            Ctxt.SaveChanges();
+        }
     }
 }

@@ -34,13 +34,13 @@ namespace RandomExamGenerator.WinFormsUI
             //studentColumn.DisplayMember = "Name";
             studentColumn.ValueMember = "Id";
             studentColumn.DataPropertyName = "Id";
-            // dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[0].ReadOnly = true;
 
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-            MessageBox.Show("Don't Insert ID", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Insert ID If You have A New ID", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -70,7 +70,7 @@ namespace RandomExamGenerator.WinFormsUI
         private void DeleteStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InsertStudent New = new InsertStudent();
-            New.Show();
+            New.ShowDialog();
         }
 
 

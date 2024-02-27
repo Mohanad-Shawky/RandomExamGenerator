@@ -1,6 +1,6 @@
 ﻿namespace RandomExamGenerator.WinFormsUI
 {
-    partial class ManageStudents
+    partial class ManageDepartmentsAndTracks
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,12 @@
         {
             dataGridView1 = new DataGridView();
             menuStrip1 = new MenuStrip();
-            fileToolStripMenuItem = new ToolStripMenuItem();
+            mangeToolStripMenuItem = new ToolStripMenuItem();
             loadToolStripMenuItem = new ToolStripMenuItem();
+            loadDepartmnetToolStripMenuItem = new ToolStripMenuItem();
+            loadTracksToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
-            DeleteStudentToolStripMenuItem = new ToolStripMenuItem();
-            label1 = new Label();
+            insertTrackToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -47,74 +48,73 @@
             dataGridView1.Location = new Point(0, 28);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(678, 422);
+            dataGridView1.Size = new Size(800, 422);
             dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.HotTrack;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mangeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(678, 28);
+            menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // mangeToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem, saveToolStripMenuItem, DeleteStudentToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(77, 24);
-            fileToolStripMenuItem.Text = "Manage";
+            mangeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem, saveToolStripMenuItem, insertTrackToolStripMenuItem });
+            mangeToolStripMenuItem.Name = "mangeToolStripMenuItem";
+            mangeToolStripMenuItem.Size = new Size(69, 24);
+            mangeToolStripMenuItem.Text = "Mange";
             // 
             // loadToolStripMenuItem
             // 
-            loadToolStripMenuItem.BackColor = Color.Yellow;
+            loadToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadDepartmnetToolStripMenuItem, loadTracksToolStripMenuItem });
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new Size(215, 26);
+            loadToolStripMenuItem.Size = new Size(212, 26);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
+            // loadDepartmnetToolStripMenuItem
+            // 
+            loadDepartmnetToolStripMenuItem.Name = "loadDepartmnetToolStripMenuItem";
+            loadDepartmnetToolStripMenuItem.Size = new Size(215, 26);
+            loadDepartmnetToolStripMenuItem.Text = "Load Departments";
+            loadDepartmnetToolStripMenuItem.Click += loadDepartmentToolStripMenuItem_Click;
+            // 
+            // loadTracksToolStripMenuItem
+            // 
+            loadTracksToolStripMenuItem.Name = "loadTracksToolStripMenuItem";
+            loadTracksToolStripMenuItem.Size = new Size(215, 26);
+            loadTracksToolStripMenuItem.Text = "Load Tracks";
+            loadTracksToolStripMenuItem.Click += loadTracksToolStripMenuItem_Click;
+            // 
             // saveToolStripMenuItem
             // 
-            saveToolStripMenuItem.BackColor = Color.Lime;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(215, 26);
+            saveToolStripMenuItem.Size = new Size(212, 26);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
-            // DeleteStudentToolStripMenuItem
+            // insertTrackToolStripMenuItem
             // 
-            DeleteStudentToolStripMenuItem.BackColor = Color.FromArgb(255, 128, 0);
-            DeleteStudentToolStripMenuItem.Name = "DeleteStudentToolStripMenuItem";
-            DeleteStudentToolStripMenuItem.Size = new Size(215, 26);
-            DeleteStudentToolStripMenuItem.Text = "Insert UserAccount";
-            DeleteStudentToolStripMenuItem.Click += DeleteStudentToolStripMenuItem_Click;
+            insertTrackToolStripMenuItem.Name = "insertTrackToolStripMenuItem";
+            insertTrackToolStripMenuItem.Size = new Size(212, 26);
+            insertTrackToolStripMenuItem.Text = "Insert Department";
+            insertTrackToolStripMenuItem.Click += insertTrackToolStripMenuItem_Click;
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.HotTrack;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(222, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(130, 28);
-            label1.TabIndex = 2;
-            label1.Text = "Student Table";
-            // 
-            // ManageStudents
+            // ManageDepartmentsAndTracks
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(678, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "ManageStudents";
-            Text = "ManageStudents";
+            Name = "ManageDepartmentsAndTracks";
+            Text = "ManageDepartmentsAndTracks";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -126,10 +126,11 @@
 
         private DataGridView dataGridView1;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem mangeToolStripMenuItem;
         private ToolStripMenuItem loadToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
-        private ToolStripMenuItem DeleteStudentToolStripMenuItem;
-        private Label label1;
+        private ToolStripMenuItem insertTrackToolStripMenuItem;
+        private ToolStripMenuItem loadDepartmnetToolStripMenuItem;
+        private ToolStripMenuItem loadTracksToolStripMenuItem;
     }
 }
