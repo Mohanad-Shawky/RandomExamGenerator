@@ -1,3 +1,4 @@
+using RandomExamGenerator.BLL.Enums;
 using RandomExamGenerator.BLL.Exceptions;
 using RandomExamGenerator.BLL.Users;
 
@@ -92,11 +93,25 @@ namespace RandomExamGenerator.WinFormsUI
                 {
                     session = await LoginSession.LoginAsync(txtUserName.Text.Trim(), txtPassword.Text.Trim());
                     MessageBox.Show($"Successfully Logged In As {session.GetSessionUserType().ToString()} {session.Account?.UserName}", "Logged In", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LoginSession.Clean();
-                    studentCourses = new StudentCourses();
-                    studentCourses.Show();
-                    Hide();
+                    if (session.GetSessionUserType() == SessionUserType.Student)
+                    {
+                        LoginSession.Clean();
+                        // TODO: Redirect to student profile
+                        studentCourses = new StudentCourses();
+                        Hide();
+                        studentCourses.Show();
+                    }
+                    else if (session.GetSessionUserType() == SessionUserType.Instructor)
+                    {
+                        LoginSession.Clean();
+                        // TODO: Redirect to instructor profile
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong, Please Try Again!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        LoginSession.Terminate();
+                        ClearInputs();
+                    }
                 }
                 catch (UserNotFoundException)
                 {
@@ -127,6 +142,10 @@ namespace RandomExamGenerator.WinFormsUI
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearInputs();
+        }
+        private void ClearInputs()
         {
             txtUserName.Text = string.Empty;
             txtUserName.Modified = false;
