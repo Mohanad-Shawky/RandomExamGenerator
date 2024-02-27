@@ -117,7 +117,7 @@ namespace RandomExamGenerator.WinFormsUI
             {
                 if (this.InstCourses.SelectedValue != null)
                 {
-                    AddNewQuestionsForm questionAddPage = new(Convert.ToInt32(this.InstCourses.SelectedValue), instId);
+                    AddNewQuestionsForm questionAddPage = new(Convert.ToInt32(this.InstCourses.SelectedValue), instId, ((Course)InstCourses.SelectedItem).Name);
                     this.Hide();
                     questionAddPage.Show();
                 }

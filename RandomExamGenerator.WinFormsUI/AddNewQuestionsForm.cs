@@ -19,12 +19,16 @@ namespace RandomExamGenerator.WinFormsUI
 
         private int instid;
         private int crsid;
+        private string crsname;
         private Question question;
-        public AddNewQuestionsForm(int _crsid, int _instid)
+        public AddNewQuestionsForm(int _crsid, int _instid, string _crsname)
         {
             instid = _instid;
             crsid = _crsid;
+            crsname = _crsname;
             InitializeComponent();
+            label4.Text = $"Add New Question for {crsname} Course";
+            label4.Location = new Point((int)(ClientRectangle.X + ClientRectangle.Width*0.1), label4.Location.Y);
         }
         private void ClosingEvent(object sender, FormClosedEventArgs e)
         {
