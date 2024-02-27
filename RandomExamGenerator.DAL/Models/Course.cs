@@ -19,6 +19,9 @@ public partial class Course
     public string Name { get; set; } = null!;
 
     [InverseProperty("Course")]
+    public virtual ICollection<DepartmentCourse> DepartmentCourses { get; set; } = new List<DepartmentCourse>();
+
+    [InverseProperty("Course")]
     public virtual ICollection<EnrollsIn> EnrollsIns { get; set; } = new List<EnrollsIn>();
 
     [InverseProperty("Course")]

@@ -13,5 +13,7 @@ namespace RandomExamGenerator.DAL.Models
         public string Name { get; set; } = default!;
         public string Gender { get; set; } = default!;
         public DateOnly Birthdate { get; set; }
+        public bool IsDeleted { get; set; }
+        public int DepartmentID { get; set; }
     }
 }

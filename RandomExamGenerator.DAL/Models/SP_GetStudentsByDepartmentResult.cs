@@ -7,13 +7,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RandomExamGenerator.DAL.Models
 {
-    public partial class SP_LoginAsStudentWithPasswordResult
+    public partial class SP_GetStudentsByDepartmentResult
     {
-        public int ID { get; set; }
         public string Name { get; set; } = default!;
         public string Gender { get; set; } = default!;
         public DateOnly Birthdate { get; set; }
-        public bool IsDeleted { get; set; }
-        public int DepartmentID { get; set; }
     }
 }

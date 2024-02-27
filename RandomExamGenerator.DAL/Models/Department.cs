@@ -21,6 +21,9 @@ public partial class Department
     [Column("InstructorManagerID")]
     public int? InstructorManagerId { get; set; }
 
+    [InverseProperty("Department")]
+    public virtual ICollection<DepartmentCourse> DepartmentCourses { get; set; } = new List<DepartmentCourse>();
+
     [ForeignKey("InstructorManagerId")]
     [InverseProperty("Departments")]
     public virtual Instructor? InstructorManager { get; set; }
@@ -29,5 +32,5 @@ public partial class Department
     public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
 
     [InverseProperty("Department")]
-    public virtual ICollection<Track> Tracks { get; set; } = new List<Track>();
+    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 }

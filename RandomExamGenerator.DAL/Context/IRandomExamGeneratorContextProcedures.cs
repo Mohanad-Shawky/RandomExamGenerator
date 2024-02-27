@@ -51,6 +51,7 @@ namespace RandomExamGenerator.DAL.Context
         Task<List<SP_ExamQuestionsResult>> SP_ExamQuestionsAsync(int? exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_GetCoursesByInstructorResult>> SP_GetCoursesByInstructorAsync(int? InstructorID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_GetStudentGradesResult>> SP_GetStudentGradesAsync(int? StudentID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_GetStudentsByDepartmentResult>> SP_GetStudentsByDepartmentAsync(int? DepartmentNo, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsInstructorWithHashResult>> SP_LoginAsInstructorWithHashAsync(string UserName, string PasswordHash, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsInstructorWithPasswordResult>> SP_LoginAsInstructorWithPasswordAsync(string UserName, string Password, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_LoginAsStudentWithHashResult>> SP_LoginAsStudentWithHashAsync(string UserName, string PasswordHash, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

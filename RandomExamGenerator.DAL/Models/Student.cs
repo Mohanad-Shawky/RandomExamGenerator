@@ -23,16 +23,21 @@ public partial class Student
 
     public DateOnly Birthdate { get; set; }
 
+    public bool IsDeleted { get; set; }
+
+    [Column("DepartmentID")]
+    public int DepartmentId { get; set; }
+
     [InverseProperty("Student")]
     public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();
+
+    [ForeignKey("DepartmentId")]
+    [InverseProperty("Students")]
+    public virtual Department Department { get; set; } = null!;
 
     [InverseProperty("Student")]
     public virtual ICollection<EnrollsIn> EnrollsIns { get; set; } = new List<EnrollsIn>();
 
     [InverseProperty("Student")]
     public virtual ICollection<Exam> Exams { get; set; } = new List<Exam>();
-
-    [ForeignKey("Id")]
-    [InverseProperty("Student")]
-    public virtual UserAccount IdNavigation { get; set; } = null!;
 }

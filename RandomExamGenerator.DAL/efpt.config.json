@@ -32,15 +32,15 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[DepartmentCourses]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[EnrollsIn]",
          "ObjectType": 0
       },
       {
          "Name": "[dbo].[Exam]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[ExamConfiguration]",
          "ObjectType": 0
       },
       {
@@ -72,10 +72,6 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[TaughtIn]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[Teaches]",
          "ObjectType": 0
       },
@@ -85,10 +81,6 @@
       },
       {
          "Name": "[dbo].[TopicQuestions]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[Track]",
          "ObjectType": 0
       },
       {
@@ -257,6 +249,10 @@
       },
       {
          "Name": "[dbo].[SP_GetStudentGrades]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SP_GetStudentsByDepartment]",
          "ObjectType": 1
       },
       {

@@ -36,10 +36,10 @@ namespace RandomExamGenerator.DAL.Context
         {
             modelBuilder.Entity<CorrectExamResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<ExamGenerationResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<GetAllCoursesResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<Course>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetAllCoursesForStudentResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<GetAllDepartmentsResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<GetAllInstructorsResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<Department>().HasNoKey().ToView(null);
+            modelBuilder.Entity<Instructor>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetChoicesForQuestionResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetCoursesTaughtByInstructorResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<GetExamResult>().HasNoKey().ToView(null);
@@ -59,6 +59,7 @@ namespace RandomExamGenerator.DAL.Context
             modelBuilder.Entity<SP_ExamQuestionsResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_GetCoursesByInstructorResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_GetStudentGradesResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<SP_GetStudentsByDepartmentResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_LoginAsInstructorWithHashResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_LoginAsInstructorWithPasswordResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_LoginAsStudentWithHashResult>().HasNoKey().ToView(null);
@@ -1380,6 +1381,32 @@ namespace RandomExamGenerator.DAL.Context
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<SP_GetStudentGradesResult>("EXEC @returnValue = [dbo].[SP_GetStudentGrades] @StudentID", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<SP_GetStudentsByDepartmentResult>> SP_GetStudentsByDepartmentAsync(int? DepartmentNo, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "DepartmentNo",
+                    Value = DepartmentNo ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<SP_GetStudentsByDepartmentResult>("EXEC @returnValue = [dbo].[SP_GetStudentsByDepartment] @DepartmentNo", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

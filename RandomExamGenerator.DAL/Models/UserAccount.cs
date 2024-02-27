@@ -28,9 +28,6 @@ public partial class UserAccount
     [InverseProperty("IdNavigation")]
     public virtual Instructor? Instructor { get; set; }
 
-    [InverseProperty("IdNavigation")]
-    public virtual Student? Student { get; set; }
-
     [ForeignKey("Type")]
     [InverseProperty("UserAccounts")]
     public virtual UserAccountType TypeNavigation { get; set; } = null!;
