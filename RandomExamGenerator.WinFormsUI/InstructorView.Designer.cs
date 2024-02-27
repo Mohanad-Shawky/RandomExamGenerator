@@ -67,9 +67,9 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(logoutLbl);
             panel1.Location = new Point(-1, 0);
-            panel1.Margin = new Padding(4);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1217, 66);
+            panel1.Size = new Size(852, 40);
             panel1.TabIndex = 1;
             // 
             // linkLabel4
@@ -80,10 +80,9 @@
             linkLabel4.Font = new Font("Candara", 12F, FontStyle.Bold);
             linkLabel4.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel4.LinkColor = Color.White;
-            linkLabel4.Location = new Point(51, 20);
-            linkLabel4.Margin = new Padding(4, 0, 4, 0);
+            linkLabel4.Location = new Point(36, 12);
             linkLabel4.Name = "linkLabel4";
-            linkLabel4.Size = new Size(80, 29);
+            linkLabel4.Size = new Size(54, 19);
             linkLabel4.TabIndex = 3;
             linkLabel4.TabStop = true;
             linkLabel4.Text = "Profile";
@@ -96,21 +95,21 @@
             linkLabel1.Font = new Font("Candara", 12F, FontStyle.Bold);
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(1089, 20);
-            linkLabel1.Margin = new Padding(4, 0, 4, 0);
+            linkLabel1.Location = new Point(762, 12);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(86, 29);
+            linkLabel1.Size = new Size(59, 19);
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Logout";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.Location = new Point(1897, 11);
-            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Location = new Point(1328, 7);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 30);
+            pictureBox2.Size = new Size(24, 18);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -123,10 +122,9 @@
             logoutLbl.Font = new Font("Candara", 12F, FontStyle.Bold);
             logoutLbl.LinkBehavior = LinkBehavior.NeverUnderline;
             logoutLbl.LinkColor = Color.White;
-            logoutLbl.Location = new Point(1801, 11);
-            logoutLbl.Margin = new Padding(4, 0, 4, 0);
+            logoutLbl.Location = new Point(1261, 7);
             logoutLbl.Name = "logoutLbl";
-            logoutLbl.Size = new Size(86, 29);
+            logoutLbl.Size = new Size(59, 19);
             logoutLbl.TabIndex = 1;
             logoutLbl.TabStop = true;
             logoutLbl.Text = "Logout";
@@ -134,10 +132,11 @@
             // InstCourses
             // 
             InstCourses.FormattingEnabled = true;
-            InstCourses.ItemHeight = 25;
-            InstCourses.Location = new Point(50, 152);
+            InstCourses.ItemHeight = 15;
+            InstCourses.Location = new Point(35, 91);
+            InstCourses.Margin = new Padding(2);
             InstCourses.Name = "InstCourses";
-            InstCourses.Size = new Size(231, 479);
+            InstCourses.Size = new Size(163, 289);
             InstCourses.TabIndex = 2;
             InstCourses.SelectedIndexChanged += InstCourses_SelectedIndexChanged;
             // 
@@ -148,9 +147,10 @@
             panel2.Controls.Add(button1);
             panel2.Controls.Add(generateBtn);
             panel2.Controls.Add(panel4);
-            panel2.Location = new Point(328, 152);
+            panel2.Location = new Point(230, 91);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(830, 479);
+            panel2.Size = new Size(581, 287);
             panel2.TabIndex = 3;
             // 
             // button3
@@ -159,10 +159,10 @@
             button3.BackColor = Color.DarkOrange;
             button3.Font = new Font("Candara", 12F, FontStyle.Bold);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(629, 424);
-            button3.Margin = new Padding(4);
+            button3.Location = new Point(440, 254);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(186, 38);
+            button3.Size = new Size(130, 23);
             button3.TabIndex = 12;
             button3.Text = "EnrollStudent";
             button3.UseVisualStyleBackColor = false;
@@ -173,10 +173,10 @@
             AddQuestionsBtn.BackColor = Color.DarkOrange;
             AddQuestionsBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
             AddQuestionsBtn.ForeColor = Color.White;
-            AddQuestionsBtn.Location = new Point(9, 424);
-            AddQuestionsBtn.Margin = new Padding(4);
+            AddQuestionsBtn.Location = new Point(6, 254);
+            AddQuestionsBtn.Margin = new Padding(3, 2, 3, 2);
             AddQuestionsBtn.Name = "AddQuestionsBtn";
-            AddQuestionsBtn.Size = new Size(173, 38);
+            AddQuestionsBtn.Size = new Size(121, 23);
             AddQuestionsBtn.TabIndex = 11;
             AddQuestionsBtn.Text = "AddQuestions";
             AddQuestionsBtn.UseVisualStyleBackColor = false;
@@ -188,10 +188,10 @@
             button1.BackColor = Color.DarkOrange;
             button1.Font = new Font("Candara", 12F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(215, 424);
-            button1.Margin = new Padding(4);
+            button1.Location = new Point(150, 254);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(152, 38);
+            button1.Size = new Size(106, 23);
             button1.TabIndex = 10;
             button1.Text = "Delete";
             button1.UseVisualStyleBackColor = false;
@@ -203,10 +203,10 @@
             generateBtn.BackColor = Color.DarkOrange;
             generateBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
             generateBtn.ForeColor = Color.White;
-            generateBtn.Location = new Point(421, 424);
-            generateBtn.Margin = new Padding(4);
+            generateBtn.Location = new Point(295, 254);
+            generateBtn.Margin = new Padding(3, 2, 3, 2);
             generateBtn.Name = "generateBtn";
-            generateBtn.Size = new Size(186, 38);
+            generateBtn.Size = new Size(130, 23);
             generateBtn.TabIndex = 9;
             generateBtn.Text = "Generate Exam";
             generateBtn.UseVisualStyleBackColor = false;
@@ -215,9 +215,10 @@
             // panel4
             // 
             panel4.Controls.Add(StudentsInCourseGrid);
-            panel4.Location = new Point(3, 79);
+            panel4.Location = new Point(2, 47);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(827, 313);
+            panel4.Size = new Size(579, 188);
             panel4.TabIndex = 4;
             // 
             // StudentsInCourseGrid
@@ -225,10 +226,11 @@
             StudentsInCourseGrid.BackgroundColor = SystemColors.Window;
             StudentsInCourseGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             StudentsInCourseGrid.Location = new Point(0, 0);
+            StudentsInCourseGrid.Margin = new Padding(2);
             StudentsInCourseGrid.Name = "StudentsInCourseGrid";
             StudentsInCourseGrid.ReadOnly = true;
             StudentsInCourseGrid.RowHeadersWidth = 62;
-            StudentsInCourseGrid.Size = new Size(824, 313);
+            StudentsInCourseGrid.Size = new Size(577, 188);
             StudentsInCourseGrid.TabIndex = 0;
             // 
             // panel3
@@ -241,17 +243,18 @@
             panel3.Controls.Add(linkLabel2);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(linkLabel3);
-            panel3.Location = new Point(328, 152);
-            panel3.Margin = new Padding(4);
+            panel3.Location = new Point(230, 91);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(830, 78);
+            panel3.Size = new Size(581, 47);
             panel3.TabIndex = 2;
             // 
             // UpdateCourseNameTxt
             // 
-            UpdateCourseNameTxt.Location = new Point(312, 32);
+            UpdateCourseNameTxt.Location = new Point(218, 19);
+            UpdateCourseNameTxt.Margin = new Padding(2);
             UpdateCourseNameTxt.Name = "UpdateCourseNameTxt";
-            UpdateCourseNameTxt.Size = new Size(205, 31);
+            UpdateCourseNameTxt.Size = new Size(145, 23);
             UpdateCourseNameTxt.TabIndex = 5;
             // 
             // CourseName
@@ -259,9 +262,10 @@
             CourseName.AutoSize = true;
             CourseName.Font = new Font("Candara", 12F, FontStyle.Bold);
             CourseName.ForeColor = Color.White;
-            CourseName.Location = new Point(120, 32);
+            CourseName.Location = new Point(84, 19);
+            CourseName.Margin = new Padding(2, 0, 2, 0);
             CourseName.Name = "CourseName";
-            CourseName.Size = new Size(148, 29);
+            CourseName.Size = new Size(100, 19);
             CourseName.TabIndex = 4;
             CourseName.Text = "Course Name";
             // 
@@ -275,10 +279,9 @@
             UpadteBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
             UpadteBtn.LinkBehavior = LinkBehavior.NeverUnderline;
             UpadteBtn.LinkColor = Color.White;
-            UpadteBtn.Location = new Point(565, 32);
-            UpadteBtn.Margin = new Padding(4, 0, 4, 0);
+            UpadteBtn.Location = new Point(396, 19);
             UpadteBtn.Name = "UpadteBtn";
-            UpadteBtn.Size = new Size(88, 29);
+            UpadteBtn.Size = new Size(60, 19);
             UpadteBtn.TabIndex = 3;
             UpadteBtn.TabStop = true;
             UpadteBtn.Text = "Update";
@@ -292,10 +295,9 @@
             linkLabel2.Font = new Font("Candara", 12F, FontStyle.Bold);
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(1528, 20);
-            linkLabel2.Margin = new Padding(4, 0, 4, 0);
+            linkLabel2.Location = new Point(1070, 12);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(86, 29);
+            linkLabel2.Size = new Size(59, 19);
             linkLabel2.TabIndex = 2;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Logout";
@@ -303,10 +305,10 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.Location = new Point(2336, 11);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(1635, 7);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 30);
+            pictureBox1.Size = new Size(24, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -319,10 +321,9 @@
             linkLabel3.Font = new Font("Candara", 12F, FontStyle.Bold);
             linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel3.LinkColor = Color.White;
-            linkLabel3.Location = new Point(2240, 11);
-            linkLabel3.Margin = new Padding(4, 0, 4, 0);
+            linkLabel3.Location = new Point(1568, 7);
             linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(86, 29);
+            linkLabel3.Size = new Size(59, 19);
             linkLabel3.TabIndex = 1;
             linkLabel3.TabStop = true;
             linkLabel3.Text = "Logout";
@@ -333,10 +334,10 @@
             button2.BackColor = Color.DarkOrange;
             button2.Font = new Font("Candara", 12F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(50, 90);
-            button2.Margin = new Padding(4);
+            button2.Location = new Point(35, 54);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(231, 38);
+            button2.Size = new Size(162, 23);
             button2.TabIndex = 12;
             button2.Text = "Add New Course";
             button2.UseVisualStyleBackColor = false;
@@ -344,19 +345,21 @@
             // 
             // InstructorView
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1215, 739);
+            ClientSize = new Size(850, 443);
             Controls.Add(button2);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(InstCourses);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(2);
             Name = "InstructorView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Instrctor View";
+            FormClosed += InstructorView_FormClosed;
             Load += InstructorView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

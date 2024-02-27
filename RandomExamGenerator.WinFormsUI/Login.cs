@@ -6,6 +6,8 @@ namespace RandomExamGenerator.WinFormsUI
 {
     public partial class Login : Form
     {
+        public static Login? Current { get; set; }
+
         private Point mouseLocation;
 
         private LoginSession? session;
@@ -20,6 +22,7 @@ namespace RandomExamGenerator.WinFormsUI
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
+            session = LoginSession.GetSession();
             if(session == null)
             {
                 Application.Exit();
@@ -98,19 +101,16 @@ namespace RandomExamGenerator.WinFormsUI
                     {
                         LoginSession.Clean();
                         // TODO: Redirect to student profile
-                        studentCourses = new StudentCourses();
                         Hide();
-                        studentCourses.ShowDialog();
-                        Show();
+                        studentCourses = new StudentCourses();
+                        studentCourses.Show();
                     }
                     else if (session.GetSessionUserType() == SessionUserType.Instructor)
                     {
                         LoginSession.Clean();
-                        // TODO: Redirect to instructor profile
                         Hide();
-                        instructorView = new InstructorView(session.Account.Id);
-                        instructorView.ShowDialog();
-                        Show();
+                        instructorView = new(session.Account.Id);
+                        instructorView.Show();
                     }
                     else
                     {
@@ -137,7 +137,8 @@ namespace RandomExamGenerator.WinFormsUI
                 }
                 catch
                 {
-                    MessageBox.Show("Something Went Wrong, Contact Your Instructor", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Something Went Wrong, Contact Your Instructor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
                 }
                 finally
                 {

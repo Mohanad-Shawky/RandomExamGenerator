@@ -11,6 +11,7 @@ using RandomExamGenerator.WinFormsUI;
 using RandomExamGenerator.BLL;
 using RandomExamGenerator.DAL.Models;
 using System.Numerics;
+using RandomExamGenerator.BLL.Users;
 
 
 namespace RandomExamGenerator.WinFormsUI
@@ -165,6 +166,15 @@ namespace RandomExamGenerator.WinFormsUI
             else MessageBox.Show("Please Choice Course First");
         }
 
+        private void InstructorView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormHelper.Logout(this);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormHelper.Logout(this);
+        }
     }
 
 }
