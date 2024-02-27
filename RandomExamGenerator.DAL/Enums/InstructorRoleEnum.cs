@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace RandomExamGenerator.DAL.Enums
 {
-    public enum Gender
+    public enum InstructorRoleEnum
     {
-        male,
-        female,
+        head,
+        lecturer,
+        supervisor,
+        ta
     }
 }

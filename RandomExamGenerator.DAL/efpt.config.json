@@ -124,6 +124,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[DeleteInstructorByID]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[DeleteInstructorToCourse]",
          "ObjectType": 1
       },
@@ -144,7 +148,19 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[GetAllCourses]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[GetAllCoursesForStudent]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetAllDepartments]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetAllInstructors]",
          "ObjectType": 1
       },
       {
@@ -172,6 +188,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[GetInstructorCoursesByID]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[GetQuestionsForExam]",
          "ObjectType": 1
       },
@@ -193,6 +213,10 @@
       },
       {
          "Name": "[dbo].[InsertCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[InsertInstructorWithCourses]",
          "ObjectType": 1
       },
       {
@@ -273,6 +297,10 @@
       },
       {
          "Name": "[dbo].[UpdateCourse]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[UpdateInstructorByID]",
          "ObjectType": 1
       },
       {

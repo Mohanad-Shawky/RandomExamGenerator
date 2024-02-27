@@ -99,7 +99,8 @@ namespace RandomExamGenerator.WinFormsUI
                         // TODO: Redirect to student profile
                         studentCourses = new StudentCourses();
                         Hide();
-                        studentCourses.Show();
+                        studentCourses.ShowDialog();
+                        Show();
                     }
                     else if (session.GetSessionUserType() == SessionUserType.Instructor)
                     {
