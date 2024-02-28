@@ -191,6 +191,7 @@
             MaximumSize = new Size(816, 557);
             Name = "ExamHistory";
             Text = "ExamHistory";
+            FormClosed += ExamHistory_FormClosed;
             Load += ExamHistory_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -90,7 +90,7 @@ namespace RandomExamGenerator.WinFormsUI
 
                     // Add a label to the group box
                     Label label = new Label();
-                    label.Text = Question.Header;
+                    label.Text = $"[{Question.Difficulty}]  {Question.Header}       ({Question.Points} Points)";
                     label.Dock = DockStyle.Top;
                     groupBox.Controls.Add(label);
 
@@ -181,10 +181,10 @@ namespace RandomExamGenerator.WinFormsUI
 
 
             MessageBox.Show("Exam Submitted Successfully");
-            this.Hide();
-
             StudentCourses studentCoursesForm = new StudentCourses();
-            studentCoursesForm.ShowDialog();
+            this.Hide();
+            studentCoursesForm.Show();
+            
         }
 
         private DataTable ConvertDictionaryToDataTable(Dictionary<int, int> dictionary)

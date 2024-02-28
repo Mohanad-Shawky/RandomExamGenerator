@@ -29,7 +29,7 @@ namespace RandomExamGenerator.WinFormsUI
             textBox2.Text = TotalPoint.HasValue ? TotalPoint.Value.ToString() : "";
             textBox3.Text = TotalTime.ToString();
             textBox4.Text = ScheduledTime.ToString();
-            textBox5.Text = SuccessPercent.ToString();
+            textBox5.Text = $"{SuccessPercent}%";
             textBox6.Text = Num.ToString();
         }
 

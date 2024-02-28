@@ -63,7 +63,7 @@ namespace RandomExamGenerator.WinFormsUI
 
             double? percentageCalc = ((double)ExamInfo.FirstOrDefault().StudentScore / ExamInfo.FirstOrDefault().TotalPoints) * 100;
 
-            percentage.Text = Math.Round(decimal.Parse(percentageCalc.ToString()) , 2) + " %";
+            percentage.Text = Math.Round(decimal.Parse(percentageCalc.ToString()), 2) + " %";
 
             correction_label.Text = $"{ExamInfo.FirstOrDefault().StudentScore} / {ExamInfo.FirstOrDefault().TotalPoints}";
 
@@ -101,7 +101,7 @@ namespace RandomExamGenerator.WinFormsUI
 
                 // Add a label to the group box
                 Label label = new Label();
-                label.Text = Question.Header;
+                label.Text = $"[{Question.Difficulty}]  {Question.Header}       ({Question.Points} Points)";
                 label.Dock = DockStyle.Top;
                 groupBox.Controls.Add(label);
 
@@ -212,6 +212,11 @@ namespace RandomExamGenerator.WinFormsUI
         private void Status_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ExamHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //FormHelper.Logout(this);
         }
     }
 }

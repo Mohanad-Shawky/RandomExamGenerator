@@ -41,7 +41,6 @@ namespace RandomExamGenerator.WinFormsUI
             {
                 StudentID = Session.StudentUser?.Id ?? 0;
             }
-            this.FormClosing += StudentCourses_FormClosing;
         }
 
         private async void StudentCourses_Load(object sender, EventArgs e)
@@ -51,6 +50,7 @@ namespace RandomExamGenerator.WinFormsUI
 
         private async Task LoadStudentCoursesAsync()
         {
+            Student_Name.Text = Session.Account?.UserName;
             panel.AutoScroll = true;
 
             //using (RandomExamGeneratorContext context = new RandomExamGeneratorContext())
@@ -102,7 +102,7 @@ namespace RandomExamGenerator.WinFormsUI
                         label3_CourseID.Text = $"{ExamInfo.FirstOrDefault().CourseID}";
 
                         remainingTime = ExamInfo.FirstOrDefault().ScheduledTime;
-                        CreateTimer(label1 , remainingTime);
+                        CreateTimer(label1, remainingTime);
 
 
                         // label1.Text = $"Exam Date: {ExamInfo.FirstOrDefault().ScheduledTime:yyyy/MM/dd HH:mm:ss tt}";
@@ -140,9 +140,11 @@ namespace RandomExamGenerator.WinFormsUI
                         button1.Click += (sender, e) =>
                         {
                             ExamHistory history = new ExamHistory();
+                            this.Hide();
                             history.ReceiveData(
                                 ExamInfo.FirstOrDefault().ID);
                             history.ShowDialog();
+                            this.Show();
                         };
                     }
                     // Student Take Exam But Failed
@@ -159,9 +161,12 @@ namespace RandomExamGenerator.WinFormsUI
                         button1.Click += (sender, e) =>
                         {
                             ExamHistory history = new ExamHistory();
+                            this.Hide();
                             history.ReceiveData(
                                ExamInfo.FirstOrDefault().ID);
                             history.ShowDialog();
+                            this.Show();
+
                         };
                     }
 
@@ -200,7 +205,7 @@ namespace RandomExamGenerator.WinFormsUI
         {
             int ExamID = 0, CourseID = 0;
             Timer t = (Timer)sender;
-            DateTime scheduledTime = (DateTime)dict[t].Tag; 
+            DateTime scheduledTime = (DateTime)dict[t].Tag;
             TimeSpan ts = scheduledTime.Subtract(DateTime.Now);
 
             if (ts.TotalSeconds <= 0)
@@ -212,7 +217,7 @@ namespace RandomExamGenerator.WinFormsUI
 
                 if (groupBox != null)
                 {
-                  
+
                     foreach (Control control in groupBox.Controls)
                     {
                         if (control is Label && control.Name == "label2_ExamID")
@@ -232,8 +237,8 @@ namespace RandomExamGenerator.WinFormsUI
                     getExamButton.Size = new System.Drawing.Size(250, 50);
                     getExamButton.Click += (sender, e) =>
                     {
-                        this.Hide();
                         Exam exam = new Exam();
+                        this.Hide();
                         exam.ReceiveData(ExamID, CourseID);
                         exam.ShowDialog();
                     };
@@ -253,24 +258,40 @@ namespace RandomExamGenerator.WinFormsUI
             }
         }
 
-        private void CreateTimer(Label label , DateTime scheduledTime)
+        private void CreateTimer(Label label, DateTime scheduledTime)
         {
             Timer timer = new Timer();
             timer.Tick += (sender, e) => timer1_Tick(sender, e);
             timer.Interval = 1000;
             dict[timer] = label;
-            dict[timer].Tag = scheduledTime; 
+            dict[timer].Tag = scheduledTime;
             timer.Enabled = true;
             timer.Start();
         }
 
-        private void StudentCourses_FormClosing(object sender, FormClosingEventArgs e)
+        private void Student_Name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel_logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             foreach (var timer in dict.Keys.ToList())
             {
                 timer.Stop();
                 timer.Dispose();
             }
+            FormHelper.Logout(this);
+        }
+
+        private void StudentCourses_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (var timer in dict.Keys.ToList())
+            {
+                timer.Stop();
+                timer.Dispose();
+            }
+            FormHelper.Logout(this);
         }
     }
 }

@@ -42,7 +42,7 @@
             Submit_btn.BackColor = SystemColors.ActiveCaption;
             Submit_btn.FlatStyle = FlatStyle.Popup;
             Submit_btn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Submit_btn.Location = new Point(656, 398);
+            Submit_btn.Location = new Point(332, 504);
             Submit_btn.Name = "Submit_btn";
             Submit_btn.Size = new Size(132, 40);
             Submit_btn.TabIndex = 0;
@@ -67,13 +67,13 @@
             // 
             panel.Location = new Point(4, 50);
             panel.Name = "panel";
-            panel.Size = new Size(784, 342);
+            panel.Size = new Size(784, 448);
             panel.TabIndex = 2;
             // 
             // ExamID
             // 
             ExamID.AutoSize = true;
-            ExamID.Location = new Point(61, 18);
+            ExamID.Location = new Point(61, 17);
             ExamID.Name = "ExamID";
             ExamID.Size = new Size(38, 15);
             ExamID.TabIndex = 3;
@@ -95,12 +95,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 556);
             Controls.Add(CourseID);
             Controls.Add(ExamID);
             Controls.Add(panel);
             Controls.Add(label1);
             Controls.Add(Submit_btn);
+            MinimumSize = new Size(816, 595);
             Name = "Exam";
             Text = "Exam";
             Load += Exam_Load;
