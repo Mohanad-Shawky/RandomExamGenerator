@@ -124,115 +124,123 @@ INSERT [dbo].[UserAccount] ([ID], [PasswordHash], [Type], [UserName]) VALUES (54
 GO
 INSERT [dbo].[UserAccount] ([ID], [PasswordHash], [Type], [UserName]) VALUES (55, N'F6F601A0B39D77ECE2B55F9E8533EED12A8BD7DEF9C21ED32B08EC1648DB18BD', N'student', N'Zahra')
 GO
+INSERT [dbo].[UserAccount] ([ID], [PasswordHash], [Type], [UserName]) VALUES (56, N'1E79C0B9D4953E26A3F5672D594348A4CCA61771E76B05FCC28197F2912751AD', N'Instructor', N'Desha')
+GO
+INSERT [dbo].[UserAccount] ([ID], [PasswordHash], [Type], [UserName]) VALUES (57, N'532EAABD9574880DBF76B9B8CC00832C20A6EC113D682299550D7A6E0F345E25', N'student', N'Test')
+GO
 SET IDENTITY_INSERT [dbo].[UserAccount] OFF
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (1, N'Hassan', N'lecturer', N'male', 1)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (1, N'Hassan', N'lecturer', N'male', 1, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (2, N'Peter', N'lecturer', N'male', 2)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (2, N'Peter', N'lecturer', N'male', 2, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (3, N'Sondos', N'lecturer', N'female', 3)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (3, N'Sondos', N'lecturer', N'female', 3, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (4, N'Mohanad', N'lecturer', N'male', 1)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (4, N'Mohanad', N'lecturer', N'male', 1, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (5, N'Yasmeen', N'lecturer', N'female', 1)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (5, N'Yasmeen', N'lecturer', N'female', 1, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (17, N'Ebtsam', N'lecturer', N'female', 4)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (17, N'Ebtsam', N'lecturer', N'female', 4, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (25, N'Gylan', N'lecturer', N'female', 5)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (25, N'Gylan', N'lecturer', N'female', 5, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (28, N'Hany', N'lecturer', N'male', 6)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (28, N'Hany', N'lecturer', N'male', 6, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (32, N'Kamel', N'lecturer', N'male', 7)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (32, N'Kamel', N'lecturer', N'male', 7, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (37, N'Mohamad', N'lecturer', N'male', 8)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (37, N'Mohamad', N'lecturer', N'male', 8, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (40, N'Marian', N'lecturer', N'female', 9)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (40, N'Marian', N'lecturer', N'female', 9, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (41, N'Nagwa', N'lecturer', N'female', 10)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (41, N'Nagwa', N'lecturer', N'female', 10, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (44, N'Olievia', N'lecturer', N'female', 11)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (44, N'Olievia', N'lecturer', N'female', 11, 0)
 GO
-INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID]) VALUES (54, N'Warda', N'lecturer', N'female', 3)
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (54, N'Warda', N'lecturer', N'female', 3, 0)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (6, N'Ahmad', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Instructor] ([ID], [Name], [Role], [Gender], [DepartmentID], [IsDeleted]) VALUES (56, N'Desha121212', N'lecturer', N'male', 1, 1)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (7, N'Amir', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (6, N'Ahmad', N'male', CAST(N'2000-12-15' AS Date), 0, 3)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (8, N'Amany', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (7, N'Amir', N'male', CAST(N'2000-12-15' AS Date), 0, 1)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (9, N'Amin', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (8, N'Amany', N'female', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (10, N'Basem', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (9, N'Amin', N'male', CAST(N'2000-12-15' AS Date), 0, 3)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (11, N'Basma', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (10, N'Basem', N'female', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (12, N'Basant', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (11, N'Basma', N'female', CAST(N'2000-12-15' AS Date), 0, 6)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (13, N'Careem', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (12, N'Basant', N'female', CAST(N'2000-12-15' AS Date), 0, 2)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (14, N'Casandra', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (13, N'Careem', N'male', CAST(N'2000-12-15' AS Date), 0, 4)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (15, N'Dalia', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (14, N'Casandra', N'female', CAST(N'2000-12-15' AS Date), 0, 8)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (16, N'Doaa', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (15, N'Dalia', N'female', CAST(N'2000-12-15' AS Date), 0, 1)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (18, N'Essam', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (16, N'Doaa', N'female', CAST(N'2000-12-15' AS Date), 0, 6)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (19, N'Eslam', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (18, N'Essam', N'male', CAST(N'2000-12-15' AS Date), 0, 4)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (20, N'Fatma', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (19, N'Eslam', N'male', CAST(N'2000-12-15' AS Date), 0, 2)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (21, N'Fatin', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (20, N'Fatma', N'female', CAST(N'2000-12-15' AS Date), 0, 9)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (22, N'Fawzy', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (21, N'Fatin', N'female', CAST(N'2000-12-15' AS Date), 0, 3)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (23, N'Foaad', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (22, N'Fawzy', N'male', CAST(N'2000-12-15' AS Date), 0, 5)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (24, N'Gamal', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (23, N'Foaad', N'male', CAST(N'2000-12-15' AS Date), 0, 10)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (26, N'Gom3a', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (24, N'Gamal', N'male', CAST(N'2000-12-15' AS Date), 0, 9)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (27, N'Hosam', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (26, N'Gom3a', N'male', CAST(N'2000-12-15' AS Date), 0, 4)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (29, N'Heba', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (27, N'Hosam', N'male', CAST(N'2000-12-15' AS Date), 0, 10)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (30, N'Hadeel', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (29, N'Heba', N'female', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (31, N'Hazem', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (30, N'Hadeel', N'female', CAST(N'2000-12-15' AS Date), 0, 6)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (33, N'Karima', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (31, N'Hazem', N'male', CAST(N'2000-12-15' AS Date), 0, 4)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (34, N'Karma', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (33, N'Karima', N'female', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (35, N'Lisa', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (34, N'Karma', N'female', CAST(N'2000-12-15' AS Date), 0, 8)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (36, N'Laila', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (35, N'Lisa', N'female', CAST(N'2000-12-15' AS Date), 0, 9)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (38, N'Mostafa', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (36, N'Laila', N'female', CAST(N'2000-12-15' AS Date), 0, 11)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (39, N'Mo3taz', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (38, N'Mostafa', N'male', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (42, N'Nader', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (39, N'Mo3taz', N'male', CAST(N'2000-12-15' AS Date), 0, 5)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (43, N'Osman', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (42, N'Nader', N'male', CAST(N'2000-12-15' AS Date), 0, 11)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (45, N'Qamar', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (43, N'Osman', N'male', CAST(N'2000-12-15' AS Date), 0, 10)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (46, N'Sandy', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (45, N'Qamar', N'male', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (47, N'Samir', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (46, N'Sandy', N'female', CAST(N'2000-12-15' AS Date), 0, 6)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (48, N'Sha3ban', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (47, N'Samir', N'male', CAST(N'2000-12-15' AS Date), 0, 11)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (49, N'Tamer', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (48, N'Sha3ban', N'male', CAST(N'2000-12-15' AS Date), 0, 7)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (50, N'Tamara', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (49, N'Tamer', N'male', CAST(N'2000-12-15' AS Date), 0, 5)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (51, N'Vector', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (50, N'Tamara', N'female', CAST(N'2000-12-15' AS Date), 0, 3)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (52, N'Wael', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (51, N'Vector', N'male', CAST(N'2000-12-15' AS Date), 0, 2)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (53, N'Waseem', N'male', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (52, N'Wael', N'male', CAST(N'2000-12-15' AS Date), 0, 3)
 GO
-INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate]) VALUES (55, N'Zahra', N'female', CAST(N'2000-12-15' AS Date))
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (53, N'Waseem', N'male', CAST(N'2000-12-15' AS Date), 0, 10)
+GO
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (55, N'Zahra', N'female', CAST(N'2000-12-15' AS Date), 0, 1)
+GO
+INSERT [dbo].[Student] ([ID], [Name], [Gender], [Birthdate], [IsDeleted], [DepartmentID]) VALUES (57, N'TestName', N'male', CAST(N'2000-12-15' AS Date), 1, 1)
 GO

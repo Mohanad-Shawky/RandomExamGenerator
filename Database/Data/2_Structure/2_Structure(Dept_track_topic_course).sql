@@ -88,7 +88,7 @@ INSERT [dbo].[Department] ([ID], [Name], [InstructorManagerID]) VALUES (11, N'Op
 GO
 SET IDENTITY_INSERT [dbo].[Department] OFF
 GO
-INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 1, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-10-01' AS Date), CAST(N'2023-10-20' AS Date), NULL, NULL)
+INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 1, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-10-01' AS Date), CAST(N'2023-10-20' AS Date), 0, 1)
 GO
 INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 2, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-08-01' AS Date), CAST(N'2023-08-20' AS Date), NULL, NULL)
 GO
@@ -105,4 +105,108 @@ GO
 INSERT [dbo].[Teaches] ([CourseID], [InstructorID], [StartDate], [EndDate]) VALUES (2, 17, CAST(N'2023-08-01' AS Date), CAST(N'2023-08-20' AS Date))
 GO
 INSERT [dbo].[Teaches] ([CourseID], [InstructorID], [StartDate], [EndDate]) VALUES (6, 2, CAST(N'2023-10-01' AS Date), NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Topic] ON 
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (1, 1, N'Markup Languagues')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (2, 1, N'Browser HTML Engine')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (3, 2, N'Systems Layers')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (4, 2, N'Memory Management')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (5, 2, N'Sceduling')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (6, 3, N'ERD')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (7, 3, N'Mapping')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (8, 3, N'SQL')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (9, 4, N'Network Topologies')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (10, 4, N'Network OSI Model')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (11, 4, N'Network Configuration')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (12, 5, N'Data Types in C')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (13, 5, N'I/O Operations')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (14, 5, N'Functional Programming')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (15, 5, N'Pointers in C')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (16, 5, N'Memory Stack and Heap')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (17, 6, N'Abstraction')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (18, 6, N'Encapsulation')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (19, 6, N'Inheritance')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (20, 6, N'Polymorphism')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (21, 7, N'XML Structure')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (23, 7, N'XML Schema')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (24, 7, N'XML Validation')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (25, 8, N'Software Development Life Cycle')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (26, 8, N'SDLC Process Models')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (27, 9, N'File Groups and Pages')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (28, 9, N'T-SQL Variables')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (29, 9, N'T-SQL Conditionals')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (30, 9, N'T-SQL Functions')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (31, 9, N'T-SQL Views')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (32, 9, N'T-SQL Stored Procedures')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (33, 9, N'T-SQL Indexers')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (34, 10, N'Stack Data Structure')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (35, 10, N'Queue Data Structure')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (36, 10, N'Linked List')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (37, 10, N'Bubble Sort')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (38, 10, N'Selection Sort')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (39, 10, N'Binary Search Tree')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (40, 10, N'Binary Search')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (41, 11, N'Activity Diagram')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (42, 11, N'Class Diagram')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (43, 11, N'Use Case Diagram')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (44, 12, N'SCRUM')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (45, 12, N'Lean')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (46, 13, N'C# Data Types')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (47, 13, N'C# OOP Features')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (48, 13, N'C# Generics')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (49, 13, N'C# Delegates')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (50, 13, N'C# Events')
+GO
+INSERT [dbo].[Topic] ([ID], [CourseID], [Name]) VALUES (51, 6, N'DS')
+GO
+SET IDENTITY_INSERT [dbo].[Topic] OFF
 GO
