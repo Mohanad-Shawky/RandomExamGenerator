@@ -1,4 +1,6 @@
 --InsertStudent
+DROP PROCEDURE IF EXISTS InsertStudent
+GO
 CREATE OR ALTER PROCEDURE InsertStudent
     @InsertID INT,
 	@StudentName NVARCHAR(100),
@@ -20,6 +22,8 @@ GO
 --====================================================================--
 GO
 --DeleteDepartment
+DROP PROCEDURE IF EXISTS DeleteDepartment
+GO
 CREATE OR ALTER PROCEDURE DeleteDepartment
 	@DeptID INT
 AS
@@ -32,14 +36,15 @@ GO
 GO
 --==============================================================================
 --InsertDepartment
+DROP PROCEDURE IF EXISTS InsertDepartment
+GO
 CREATE OR ALTER PROCEDURE InsertDepartment
-	@DeptID INT,
 	@DeptName NVARCHAR(100),
 	@InstManager INT
 AS
 BEGIN
 		INSERT INTO Department
-		VALUES (@DeptID,@DeptName,@InstManager)
+		VALUES (@DeptName,@InstManager)
 END;
 GO
 --Exec InsertDepartment @DeptID=10,@DeptName='SWA',@InstManager=1; 
@@ -47,6 +52,8 @@ GO
 
 --==============================================================================
 --UpdateDepartment
+DROP PROCEDURE IF EXISTS UpdateDepartment
+GO
 CREATE OR ALTER PROCEDURE UpdateDepartment
 	@DeptID INT,
 	@NewDeptName NVARCHAR(100),
@@ -64,6 +71,8 @@ GO
 --======================================================================
 GO
 --GetDepartmentByID
+DROP PROCEDURE IF EXISTS GetDepartmentByID
+GO
 CREATE OR ALTER PROCEDURE GetDepartmentByID
 	@DeptID INT
 AS
