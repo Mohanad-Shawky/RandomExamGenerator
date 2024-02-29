@@ -39,6 +39,8 @@ namespace RandomExamGenerator.WinFormsUI
         private void button1_Click(object sender, EventArgs e)
         {
             // TODO: make stored procedure to insert the user account and hash the input password
+            user.PasswordHash = FormHelper.GetHash(FormHelper.sha256, CreatePassword.Text).ToUpper();
+
             UserAccount newStudent = new UserAccount();
             newStudent.UserName = user.UserName;
             newStudent.PasswordHash = user.PasswordHash;
