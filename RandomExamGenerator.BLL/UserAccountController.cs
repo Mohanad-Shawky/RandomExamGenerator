@@ -13,7 +13,15 @@ namespace RandomExamGenerator.BLL
         {
 
             Ctxt.UserAccounts.Add(us);
-            Ctxt.SaveChanges();
+            try
+            {
+                Ctxt.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                
+            }
+            
 
         }
 
