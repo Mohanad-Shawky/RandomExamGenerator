@@ -67,8 +67,8 @@ namespace RandomExamGenerator.WinFormsUI
 
             correction_label.Text = $"{ExamInfo.FirstOrDefault().StudentScore} / {ExamInfo.FirstOrDefault().TotalPoints}";
 
-            SuccessFrom_label.Text = (ExamInfo.FirstOrDefault().SuccessPercent * 100).ToString() + "%";
-
+            SuccessFrom_label.Text = (Math.Round(decimal.Parse((ExamInfo.FirstOrDefault().SuccessPercent * 100).ToString()), 2)) + "%";
+            
             panel.AutoScroll = true;
 
             int groupBoxVerticalPosition = 0;

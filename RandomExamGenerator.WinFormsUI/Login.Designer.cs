@@ -129,7 +129,7 @@
             btnCloseApp.FlatAppearance.MouseDownBackColor = Color.Red;
             btnCloseApp.FlatAppearance.MouseOverBackColor = Color.LightCoral;
             btnCloseApp.FlatStyle = FlatStyle.Flat;
-            btnCloseApp.Font = new Font("Open Sans", 13.2000008F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnCloseApp.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnCloseApp.Location = new Point(659, 9);
             btnCloseApp.Margin = new Padding(0);
             btnCloseApp.Name = "btnCloseApp";

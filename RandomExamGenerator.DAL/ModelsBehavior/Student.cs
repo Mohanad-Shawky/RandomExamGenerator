@@ -12,7 +12,10 @@ namespace RandomExamGenerator.DAL.Models;
 public partial class Student
 {
 
-    public Student() { }
+    public Student() 
+    {
+        DepartmentId = 1;
+    }
     public Student(SP_LoginAsStudentWithPasswordResult loginAsStudentWithPasswordResult)
     {
         this.Id = loginAsStudentWithPasswordResult.ID;

@@ -53,58 +53,65 @@
             // 
             // EasyQuestions
             // 
-            EasyQuestions.Location = new Point(244, 218);
+            EasyQuestions.Location = new Point(171, 131);
+            EasyQuestions.Margin = new Padding(2);
             EasyQuestions.Name = "EasyQuestions";
-            EasyQuestions.Size = new Size(180, 31);
+            EasyQuestions.Size = new Size(126, 23);
             EasyQuestions.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(159, 365);
+            label1.Location = new Point(111, 219);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(63, 220);
+            label2.Location = new Point(44, 132);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(132, 25);
+            label2.Size = new Size(86, 15);
             label2.TabIndex = 3;
             label2.Text = "Easy Questions";
             // 
             // HardQuestions
             // 
             HardQuestions.AutoSize = true;
-            HardQuestions.Location = new Point(63, 274);
+            HardQuestions.Location = new Point(44, 164);
+            HardQuestions.Margin = new Padding(2, 0, 2, 0);
             HardQuestions.Name = "HardQuestions";
-            HardQuestions.Size = new Size(136, 25);
+            HardQuestions.Size = new Size(89, 15);
             HardQuestions.TabIndex = 4;
             HardQuestions.Text = "Hard Questions";
             // 
             // hardQuestion
             // 
-            hardQuestion.Location = new Point(244, 274);
+            hardQuestion.Location = new Point(171, 164);
+            hardQuestion.Margin = new Padding(2);
             hardQuestion.Name = "hardQuestion";
-            hardQuestion.Size = new Size(180, 31);
+            hardQuestion.Size = new Size(126, 23);
             hardQuestion.TabIndex = 5;
             // 
             // MeduimQuestion
             // 
             MeduimQuestion.AutoSize = true;
-            MeduimQuestion.Location = new Point(63, 326);
+            MeduimQuestion.Location = new Point(44, 196);
+            MeduimQuestion.Margin = new Padding(2, 0, 2, 0);
             MeduimQuestion.Name = "MeduimQuestion";
-            MeduimQuestion.Size = new Size(150, 25);
+            MeduimQuestion.Size = new Size(100, 15);
             MeduimQuestion.TabIndex = 6;
             MeduimQuestion.Text = "MeduimQuestion";
             // 
             // medQuest
             // 
-            medQuest.Location = new Point(244, 326);
+            medQuest.Location = new Point(171, 196);
+            medQuest.Margin = new Padding(2);
             medQuest.Name = "medQuest";
-            medQuest.Size = new Size(180, 31);
+            medQuest.Size = new Size(126, 23);
             medQuest.TabIndex = 7;
             // 
             // panel1
@@ -125,100 +132,114 @@
             panel1.Controls.Add(EasyQuestions);
             panel1.Controls.Add(HardQuestions);
             panel1.Controls.Add(hardQuestion);
-            panel1.Location = new Point(96, 85);
+            panel1.Location = new Point(67, 51);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1004, 477);
+            panel1.Size = new Size(703, 287);
             panel1.TabIndex = 8;
             // 
             // SubmitBtn
             // 
-            SubmitBtn.Location = new Point(530, 326);
+            SubmitBtn.BackColor = Color.DodgerBlue;
+            SubmitBtn.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SubmitBtn.ForeColor = Color.White;
+            SubmitBtn.Location = new Point(449, 209);
+            SubmitBtn.Margin = new Padding(2);
             SubmitBtn.Name = "SubmitBtn";
-            SubmitBtn.Size = new Size(291, 40);
+            SubmitBtn.Size = new Size(127, 39);
             SubmitBtn.TabIndex = 16;
             SubmitBtn.Text = "Submit";
-            SubmitBtn.UseVisualStyleBackColor = true;
+            SubmitBtn.UseVisualStyleBackColor = false;
             SubmitBtn.Click += Submit_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(520, 280);
+            label6.Location = new Point(364, 168);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(42, 25);
+            label6.Size = new Size(27, 15);
             label6.TabIndex = 15;
             label6.Text = "End";
             // 
             // EndExamTime
             // 
             EndExamTime.Format = DateTimePickerFormat.Time;
-            EndExamTime.Location = new Point(640, 275);
+            EndExamTime.Location = new Point(448, 165);
+            EndExamTime.Margin = new Padding(2);
             EndExamTime.Name = "EndExamTime";
-            EndExamTime.Size = new Size(181, 31);
+            EndExamTime.Size = new Size(128, 23);
             EndExamTime.TabIndex = 14;
             EndExamTime.Value = new DateTime(2024, 2, 24, 0, 0, 0, 0);
             // 
             // StartExamTime
             // 
             StartExamTime.Format = DateTimePickerFormat.Time;
-            StartExamTime.Location = new Point(640, 212);
+            StartExamTime.Location = new Point(448, 127);
+            StartExamTime.Margin = new Padding(2);
             StartExamTime.Name = "StartExamTime";
-            StartExamTime.Size = new Size(181, 31);
+            StartExamTime.Size = new Size(128, 23);
             StartExamTime.TabIndex = 13;
             StartExamTime.Value = new DateTime(2024, 2, 24, 0, 0, 0, 0);
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(520, 218);
+            label5.Location = new Point(364, 131);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(48, 25);
+            label5.Size = new Size(31, 15);
             label5.TabIndex = 12;
-            label5.Text = "Strat";
+            label5.Text = "Start";
             // 
             // dateTimeDay
             // 
             dateTimeDay.Format = DateTimePickerFormat.Short;
-            dateTimeDay.Location = new Point(640, 149);
+            dateTimeDay.Location = new Point(448, 89);
+            dateTimeDay.Margin = new Padding(2);
             dateTimeDay.Name = "dateTimeDay";
-            dateTimeDay.Size = new Size(181, 31);
+            dateTimeDay.Size = new Size(128, 23);
             dateTimeDay.TabIndex = 11;
             dateTimeDay.Value = new DateTime(2024, 2, 28, 0, 0, 0, 0);
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(520, 154);
+            label4.Location = new Point(364, 92);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(43, 25);
+            label4.Size = new Size(27, 15);
             label4.TabIndex = 10;
             label4.Text = "Day";
             // 
             // SuccessPercentTxtBox
             // 
-            SuccessPercentTxtBox.Location = new Point(244, 148);
+            SuccessPercentTxtBox.Location = new Point(171, 89);
+            SuccessPercentTxtBox.Margin = new Padding(2);
             SuccessPercentTxtBox.Name = "SuccessPercentTxtBox";
-            SuccessPercentTxtBox.Size = new Size(182, 31);
+            SuccessPercentTxtBox.Size = new Size(129, 23);
             SuccessPercentTxtBox.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(63, 148);
+            label3.Location = new Point(44, 89);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(159, 25);
+            label3.Size = new Size(107, 15);
             label3.TabIndex = 8;
             label3.Text = "SuccessPercentage";
             // 
             // GenerateExamPage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1259, 653);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(881, 392);
             Controls.Add(panel1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(2);
             Name = "GenerateExamPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GenerateExamPage";

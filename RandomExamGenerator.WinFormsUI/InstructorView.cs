@@ -175,6 +175,24 @@ namespace RandomExamGenerator.WinFormsUI
         {
             FormHelper.Logout(this);
         }
+
+        private void ManageInstructor_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ManageInstructors ManageInstructor = new ManageInstructors();
+            ManageInstructor.ShowDialog();
+        }
+
+        private void ManageStudentClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ManageStudents ManageStudent = new ManageStudents();
+            ManageStudent.ShowDialog();
+        }
+
+        private void ManageDept_Click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ManageDepartmentsAndTracks ManageDepartment = new ManageDepartmentsAndTracks();
+            ManageDepartment.ShowDialog();
+        }
     }
 
 }

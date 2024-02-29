@@ -9,33 +9,20 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-02-26T09:46:00.3172308Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-02-28T22:57:58.6614212Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DataSource1">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=DESKTOP-GN96CCD\MSSQLSERVER01;Initial Catalog=RandomExamGenerator</ConnectString>
-        <IntegratedSecurity>true</IntegratedSecurity>
-      </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>c449e43d-3fdd-4c05-87aa-f162d336700d</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+      <SharedDataSet>
+        <SharedDataSetReference>ExamQuestionsDS</SharedDataSetReference>
         <QueryParameters>
           <QueryParameter Name="@exam_id">
             <Value>=Parameters!exam_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>SP_ExamQuestions</CommandText>
-      </Query>
+      </SharedDataSet>
       <Fields>
         <Field Name="Header">
           <DataField>Header</DataField>
@@ -56,36 +43,37 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.03819in</Width>
+                  <Width>3.64931in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.82986in</Width>
+                  <Width>2.88889in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.65972in</Height>
+                  <Height>0.77604in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Question_Header</Value>
+                                  <Value>Header</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Blue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -97,12 +85,11 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="Textbox10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -111,15 +98,16 @@
                                 <TextRun>
                                   <Value>Question Choices</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Blue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -136,7 +124,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.65972in</Height>
+                  <Height>0.77604in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -219,10 +207,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.38889in</Top>
-            <Left>1.01611in</Left>
-            <Height>1.31944in</Height>
-            <Width>9.86805in</Width>
+            <Top>0.21875in</Top>
+            <Left>1.36333in</Left>
+            <Height>1.55208in</Height>
+            <Width>6.53819in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -233,7 +221,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>11.17583in</Width>
+      <Width>11.88416in</Width>
       <Page>
         <PageHeader>
           <Height>0.94667in</Height>
@@ -258,8 +246,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.25917in</Top>
-              <Left>3.96055in</Left>
+              <Top>0.10292in</Top>
+              <Left>2.71055in</Left>
               <Height>0.6875in</Height>
               <Width>3.07639in</Width>
               <Style>

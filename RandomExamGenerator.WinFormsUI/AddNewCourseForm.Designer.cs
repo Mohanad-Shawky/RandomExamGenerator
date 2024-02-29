@@ -35,31 +35,33 @@
             // 
             // NewCourseName
             // 
-            NewCourseName.Location = new Point(293, 130);
+            NewCourseName.Location = new Point(205, 78);
+            NewCourseName.Margin = new Padding(2, 2, 2, 2);
             NewCourseName.Name = "NewCourseName";
-            NewCourseName.Size = new Size(326, 31);
+            NewCourseName.Size = new Size(229, 23);
             NewCourseName.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 12F, FontStyle.Bold);
-            label1.Location = new Point(128, 130);
+            label1.Location = new Point(90, 78);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(143, 29);
+            label1.Size = new Size(97, 19);
             label1.TabIndex = 1;
             label1.Text = "CourseName";
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.BackColor = Color.DarkOrange;
+            button2.BackColor = Color.DodgerBlue;
             button2.Font = new Font("Candara", 12F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(316, 232);
-            button2.Margin = new Padding(4);
+            button2.Location = new Point(221, 139);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(231, 38);
+            button2.Size = new Size(162, 41);
             button2.TabIndex = 13;
             button2.Text = "Submit";
             button2.UseVisualStyleBackColor = false;
@@ -67,13 +69,14 @@
             // 
             // AddNewCourseForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(560, 270);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(NewCourseName);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AddNewCourseForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "AddNewCourse";

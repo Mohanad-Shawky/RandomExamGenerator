@@ -48,19 +48,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(272, 121);
+            label1.Location = new Point(58, 116);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(167, 29);
+            label1.Size = new Size(112, 19);
             label1.TabIndex = 0;
             label1.Text = "Enter Question";
             // 
             // QuestionHeader
             // 
-            QuestionHeader.Location = new Point(272, 153);
+            QuestionHeader.Location = new Point(58, 138);
             QuestionHeader.Margin = new Padding(4, 3, 4, 3);
             QuestionHeader.Name = "QuestionHeader";
-            QuestionHeader.Size = new Size(762, 92);
+            QuestionHeader.Size = new Size(558, 92);
             QuestionHeader.TabIndex = 1;
             QuestionHeader.Text = "";
             // 
@@ -69,17 +69,18 @@
             Choices.Controls.Add(AddChoice);
             Choices.Controls.Add(txtChoiceText);
             Choices.Controls.Add(checkedList_Choices);
-            Choices.Location = new Point(240, 295);
+            Choices.Location = new Point(28, 252);
             Choices.Margin = new Padding(4, 3, 4, 3);
             Choices.Name = "Choices";
-            Choices.Size = new Size(816, 465);
+            Choices.Size = new Size(603, 275);
             Choices.TabIndex = 2;
             // 
             // AddChoice
             // 
-            AddChoice.BackColor = Color.MediumAquamarine;
+            AddChoice.BackColor = Color.DodgerBlue;
             AddChoice.DialogResult = DialogResult.OK;
-            AddChoice.Location = new Point(622, 50);
+            AddChoice.ForeColor = Color.White;
+            AddChoice.Location = new Point(428, 52);
             AddChoice.Margin = new Padding(4, 3, 4, 3);
             AddChoice.Name = "AddChoice";
             AddChoice.Size = new Size(146, 39);
@@ -93,7 +94,7 @@
             txtChoiceText.Location = new Point(32, 29);
             txtChoiceText.Margin = new Padding(4, 3, 4, 3);
             txtChoiceText.Name = "txtChoiceText";
-            txtChoiceText.Size = new Size(762, 75);
+            txtChoiceText.Size = new Size(552, 75);
             txtChoiceText.TabIndex = 1;
             txtChoiceText.Text = "";
             // 
@@ -103,36 +104,37 @@
             checkedList_Choices.Location = new Point(32, 150);
             checkedList_Choices.Margin = new Padding(4, 3, 4, 3);
             checkedList_Choices.Name = "checkedList_Choices";
-            checkedList_Choices.Size = new Size(762, 276);
+            checkedList_Choices.Size = new Size(556, 114);
             checkedList_Choices.TabIndex = 0;
             // 
             // PointsQuest
             // 
             PointsQuest.AcceptsReturn = true;
-            PointsQuest.Location = new Point(1274, 175);
+            PointsQuest.Location = new Point(761, 164);
             PointsQuest.Margin = new Padding(4, 3, 4, 3);
             PointsQuest.Name = "PointsQuest";
-            PointsQuest.Size = new Size(120, 37);
+            PointsQuest.Size = new Size(120, 27);
             PointsQuest.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1153, 175);
+            label2.Location = new Point(690, 164);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(77, 29);
+            label2.Size = new Size(53, 19);
             label2.TabIndex = 4;
             label2.Text = "Points";
             // 
             // SaveQuestBtn
             // 
-            SaveQuestBtn.BackColor = Color.MediumAquamarine;
+            SaveQuestBtn.BackColor = Color.DodgerBlue;
             SaveQuestBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
-            SaveQuestBtn.Location = new Point(240, 781);
+            SaveQuestBtn.ForeColor = Color.White;
+            SaveQuestBtn.Location = new Point(689, 467);
             SaveQuestBtn.Margin = new Padding(4, 3, 4, 3);
             SaveQuestBtn.Name = "SaveQuestBtn";
-            SaveQuestBtn.Size = new Size(339, 39);
+            SaveQuestBtn.Size = new Size(170, 39);
             SaveQuestBtn.TabIndex = 7;
             SaveQuestBtn.Text = "Save Question";
             SaveQuestBtn.UseVisualStyleBackColor = false;
@@ -141,10 +143,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1152, 370);
+            label3.Location = new Point(682, 359);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(106, 29);
+            label3.Size = new Size(71, 19);
             label3.TabIndex = 8;
             label3.Text = "Difficulty";
             // 
@@ -152,19 +154,19 @@
             // 
             DifficltyQuest.FormattingEnabled = true;
             DifficltyQuest.Items.AddRange(new object[] { "hard", "easy", "medium" });
-            DifficltyQuest.Location = new Point(1274, 367);
+            DifficltyQuest.Location = new Point(761, 356);
             DifficltyQuest.Margin = new Padding(4, 3, 4, 3);
             DifficltyQuest.Name = "DifficltyQuest";
-            DifficltyQuest.Size = new Size(120, 37);
+            DifficltyQuest.Size = new Size(120, 27);
             DifficltyQuest.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1153, 271);
+            label5.Location = new Point(690, 260);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(62, 29);
+            label5.Size = new Size(41, 19);
             label5.TabIndex = 11;
             label5.Text = "Type";
             // 
@@ -172,29 +174,29 @@
             // 
             TypeQuestion.FormattingEnabled = true;
             TypeQuestion.Items.AddRange(new object[] { "tf", "smcq" });
-            TypeQuestion.Location = new Point(1274, 263);
+            TypeQuestion.Location = new Point(761, 252);
             TypeQuestion.Margin = new Padding(4, 3, 4, 3);
             TypeQuestion.Name = "TypeQuestion";
-            TypeQuestion.Size = new Size(120, 37);
+            TypeQuestion.Size = new Size(120, 27);
             TypeQuestion.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Candara", 20F, FontStyle.Bold);
-            label4.Location = new Point(485, 23);
+            label4.Location = new Point(379, 18);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(349, 49);
+            label4.Size = new Size(237, 33);
             label4.TabIndex = 13;
             label4.Text = "Question Add Page";
             // 
             // AddNewQuestionsForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 29F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1535, 845);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(904, 552);
             Controls.Add(label4);
             Controls.Add(TypeQuestion);
             Controls.Add(label5);

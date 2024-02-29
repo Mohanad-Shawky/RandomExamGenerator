@@ -9,25 +9,14 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-02-26T09:50:26.0389608Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-02-28T23:12:30.3166168Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DataSource1">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=DESKTOP-GN96CCD\MSSQLSERVER01;Initial Catalog=RandomExamGenerator</ConnectString>
-        <IntegratedSecurity>true</IntegratedSecurity>
-      </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>c449e43d-3fdd-4c05-87aa-f162d336700d</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+      <SharedDataSet>
+        <SharedDataSetReference>StudentAnswerDS</SharedDataSetReference>
         <QueryParameters>
           <QueryParameter Name="@exam_id">
             <Value>=Parameters!exam_id.Value</Value>
@@ -36,9 +25,7 @@
             <Value>=Parameters!stud_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>SP_StudentAnswers</CommandText>
-      </Query>
+      </SharedDataSet>
       <Fields>
         <Field Name="Header">
           <DataField>Header</DataField>

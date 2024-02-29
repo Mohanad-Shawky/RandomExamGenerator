@@ -38,50 +38,55 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(279, 9);
+            label1.Location = new Point(244, 7);
             label1.Name = "label1";
-            label1.Size = new Size(261, 38);
+            label1.Size = new Size(207, 30);
             label1.TabIndex = 0;
             label1.Text = "Insert Department";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(303, 77);
+            textBox1.Location = new Point(265, 58);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 27);
+            textBox1.Size = new Size(208, 23);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(114, 80);
+            label2.Location = new Point(100, 60);
             label2.Name = "label2";
-            label2.Size = new Size(153, 20);
+            label2.Size = new Size(121, 15);
             label2.TabIndex = 2;
             label2.Text = "Name Of Department";
             // 
             // button1
             // 
+            button1.BackColor = Color.DodgerBlue;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(634, 107);
+            button1.Location = new Point(553, 44);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(126, 53);
+            button1.Size = new Size(110, 40);
             button1.TabIndex = 3;
             button1.Text = "Insert";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // InsertDepartment
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 172);
+            ClientSize = new Size(700, 129);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "InsertDepartment";

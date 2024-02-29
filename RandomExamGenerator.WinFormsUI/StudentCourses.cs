@@ -94,7 +94,7 @@ namespace RandomExamGenerator.WinFormsUI
                     int num = returnValue.Value;
 
                     // Student does Not take Exam
-                    if (ExamInfo.FirstOrDefault().StudentScore == 0 &&
+                    if (ExamInfo.FirstOrDefault().StudentScore == null &&
                         ExamInfo.FirstOrDefault().StudentTimeToSolve == null &&
                         ExamInfo.FirstOrDefault().IsStudentPassed == null)
                     {
@@ -118,7 +118,7 @@ namespace RandomExamGenerator.WinFormsUI
                         {
                             ExamDetails examDetails = new ExamDetails();
                             examDetails.ReceiveData(course.Name,
-                                ExamInfo.FirstOrDefault().TotalPoints,
+                                //ExamInfo.FirstOrDefault().TotalPoints,
                                 ExamInfo.FirstOrDefault().TotalTime,
                                 ExamInfo.FirstOrDefault().ScheduledTime,
                                 ExamInfo.FirstOrDefault().SuccessPercent * 100,
@@ -248,13 +248,15 @@ namespace RandomExamGenerator.WinFormsUI
             else
             {
                 int years = ts.Days / 365;
-                int months = (ts.Days % 365) / 30;
+                int months = (int)((ts.Days % 365) / 30.436875); // Approximate number of days in a month
                 int days = ts.Days % 30;
                 int hours = ts.Hours;
                 int minutes = ts.Minutes;
                 int seconds = ts.Seconds;
-                dict[t].Text = string.Format("{1} Months {2} Days {3} Hours {4} Minutes {5} Seconds",
-     years, months, days, hours, minutes, seconds);
+                int milliseconds = ts.Milliseconds;
+
+                dict[t].Text = string.Format("{0} Months {1} Days {2} Hours {3} Minutes {4} Seconds",
+                    months, days, hours, minutes, seconds);
             }
         }
 

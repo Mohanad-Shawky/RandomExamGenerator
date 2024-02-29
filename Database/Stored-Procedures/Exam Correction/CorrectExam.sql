@@ -1,14 +1,12 @@
 USE [RandomExamGenerator]
 GO
-
-/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/3/2024 9:24:12 AM ******/
+/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/29/2024 1:46:55 AM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE CorrectExam
+ALTER   PROCEDURE [dbo].[CorrectExam]
     @ExamID INT,
 	@StudentID INT
 AS
@@ -16,6 +14,8 @@ BEGIN
    DECLARE @TotalPoints INT
         DECLARE @StudentScore FLOAT
         DECLARE @StudentPercent FLOAT
+
+		--select @TotalPoints = TotalPoints from Exam where ID = @ExamID
 
 		IF NOT EXISTS (SELECT 1 FROM Exam WHERE ID = @ExamID)
 		BEGIN
@@ -25,19 +25,19 @@ BEGIN
 		BEGIN
 		;THROW 51000, 'Invalid StudentID provided.', 1;
 		END
-        -- Calculate TotalPoints
-        SELECT @TotalPoints = ISNULL(SUM(A.Grade), 0)
+        ---- Calculate Student Score
+        SELECT @StudentScore = ISNULL(SUM(A.Grade), 0)
         FROM Answer A
         WHERE A.ExamID = @ExamID AND A.StudentID=@StudentID
 
-        -- Calculate StudentScore
-        SELECT @StudentScore = ISNULL(SUM(CASE WHEN A.ModelAnswer = A.StudentAnswer THEN Q.Points ELSE 0 END), 0)
-        FROM Answer A
-        JOIN Question Q ON A.QuestionID = Q.ID
-        WHERE A.ExamID = @ExamID AND A.StudentID=@StudentID;
+         --Calculate Total Points
+        SELECT @TotalPoints = Sum(Q.Points) 
+		from Question Q inner join ExamQuestions E       
+        on Q.ID = E.QuestionID
+        and E.ExamID = @ExamID 
 
         -- Calculate StudentPercent
-        SELECT @StudentPercent = ISNULL((@StudentScore / @TotalPoints), 0);
+        SELECT @StudentPercent = (@StudentScore / @TotalPoints);
 
         -- Update Exam table
         UPDATE Exam
@@ -61,6 +61,3 @@ BEGIN
 
 	
 END;
-GO
-
-

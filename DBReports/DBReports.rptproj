@@ -49,7 +49,12 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="ExamQuestionsDS.rsd" />
+    <DataSet Include="GetCourseByInstructorDS.rsd" />
+    <DataSet Include="StudentAnswerDS.rsd" />
+    <DataSet Include="StudentGradeDS.rsd" />
     <DataSet Include="StudentsInDepartment.rsd" />
+    <DataSet Include="TopicInCoursesDS.rsd" />
   </ItemGroup>
   <ItemGroup>
     <DataSource Include="RandomExamGenerator.rds" />

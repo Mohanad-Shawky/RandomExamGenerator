@@ -17,6 +17,7 @@ namespace RandomExamGenerator.WinFormsUI
     public partial class ManageStudents : Form
     {
         public BindingList<Student> students;
+        public BindingList<Department> departments;
         public ManageStudents()
         {
             InitializeComponent();
@@ -25,21 +26,28 @@ namespace RandomExamGenerator.WinFormsUI
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Text = "Data Load";
             //  MessageBox.Show("Loading");
             StudentController.Ctxt.Students.Load();
             students = StudentController.Ctxt.Students.Local.ToBindingList();
+            departments = new BindingList<Department>(DepartmentController.GetAllDepartment());
             dataGridView1.DataSource = students;
-            DataGridViewComboBoxColumn studentColumn = new DataGridViewComboBoxColumn();
-            //studentColumn.DisplayMember = "Name";
-            studentColumn.ValueMember = "Id";
-            studentColumn.DataPropertyName = "Id";
-            dataGridView1.Columns[0].ReadOnly = true;
+            DataGridViewComboBoxColumn departmentColumn = new DataGridViewComboBoxColumn();
+            departmentColumn.DataSource = departments;
+            departmentColumn.DisplayMember = "Name";
+            departmentColumn.Name = "Department";
+            departmentColumn.ValueMember = "Id";
+            departmentColumn.DataPropertyName = "DepartmentId";
+            dataGridView1.Columns.Add(departmentColumn);
 
-            dataGridView1.Columns[4].Visible = false;
+
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+
             MessageBox.Show("Insert ID If You have A New ID", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
@@ -55,6 +63,7 @@ namespace RandomExamGenerator.WinFormsUI
                         StudentController.InsertStudents(students[i]);
                     }
                 }
+
                 StudentController.SaveAllStudents();
 
                 MessageBox.Show("Data Save");

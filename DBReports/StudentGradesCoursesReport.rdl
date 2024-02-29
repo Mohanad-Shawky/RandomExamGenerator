@@ -9,33 +9,20 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-02-26T07:29:09.4414784Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-02-28T23:15:40.4489878Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DataSource1">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=DESKTOP-GN96CCD\MSSQLSERVER01;Initial Catalog=RandomExamGenerator</ConnectString>
-        <IntegratedSecurity>true</IntegratedSecurity>
-      </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>c449e43d-3fdd-4c05-87aa-f162d336700d</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+      <SharedDataSet>
+        <SharedDataSetReference>StudentGradeDS</SharedDataSetReference>
         <QueryParameters>
           <QueryParameter Name="@StudentID">
             <Value>=Parameters!StudentID.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>SP_GetStudentGrades</CommandText>
-      </Query>
+      </SharedDataSet>
       <Fields>
         <Field Name="Grade">
           <DataField>Grade</DataField>

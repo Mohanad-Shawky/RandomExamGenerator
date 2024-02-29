@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            linkLabel5 = new LinkLabel();
+            AddDept_btn = new LinkLabel();
+            AddInstructor_btn = new LinkLabel();
             linkLabel4 = new LinkLabel();
             linkLabel1 = new LinkLabel();
             pictureBox2 = new PictureBox();
@@ -62,6 +65,9 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(linkLabel5);
+            panel1.Controls.Add(AddDept_btn);
+            panel1.Controls.Add(AddInstructor_btn);
             panel1.Controls.Add(linkLabel4);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(pictureBox2);
@@ -71,6 +77,54 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(852, 40);
             panel1.TabIndex = 1;
+            // 
+            // linkLabel5
+            // 
+            linkLabel5.ActiveLinkColor = Color.DarkOrange;
+            linkLabel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            linkLabel5.AutoSize = true;
+            linkLabel5.Font = new Font("Candara", 12F, FontStyle.Bold);
+            linkLabel5.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel5.LinkColor = Color.White;
+            linkLabel5.Location = new Point(433, 12);
+            linkLabel5.Name = "linkLabel5";
+            linkLabel5.Size = new Size(151, 19);
+            linkLabel5.TabIndex = 6;
+            linkLabel5.TabStop = true;
+            linkLabel5.Text = "Manage Department";
+            linkLabel5.LinkClicked += ManageDept_Click;
+            // 
+            // AddDept_btn
+            // 
+            AddDept_btn.ActiveLinkColor = Color.DarkOrange;
+            AddDept_btn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddDept_btn.AutoSize = true;
+            AddDept_btn.Font = new Font("Candara", 12F, FontStyle.Bold);
+            AddDept_btn.LinkBehavior = LinkBehavior.NeverUnderline;
+            AddDept_btn.LinkColor = Color.White;
+            AddDept_btn.Location = new Point(273, 12);
+            AddDept_btn.Name = "AddDept_btn";
+            AddDept_btn.Size = new Size(123, 19);
+            AddDept_btn.TabIndex = 5;
+            AddDept_btn.TabStop = true;
+            AddDept_btn.Text = "Manage Student";
+            AddDept_btn.LinkClicked += ManageStudentClicked;
+            // 
+            // AddInstructor_btn
+            // 
+            AddInstructor_btn.ActiveLinkColor = Color.DarkOrange;
+            AddInstructor_btn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddInstructor_btn.AutoSize = true;
+            AddInstructor_btn.Font = new Font("Candara", 12F, FontStyle.Bold);
+            AddInstructor_btn.LinkBehavior = LinkBehavior.NeverUnderline;
+            AddInstructor_btn.LinkColor = Color.White;
+            AddInstructor_btn.Location = new Point(111, 12);
+            AddInstructor_btn.Name = "AddInstructor_btn";
+            AddInstructor_btn.Size = new Size(137, 19);
+            AddInstructor_btn.TabIndex = 4;
+            AddInstructor_btn.TabStop = true;
+            AddInstructor_btn.Text = "Manage Instructor";
+            AddInstructor_btn.LinkClicked += ManageInstructor_btn_LinkClicked;
             // 
             // linkLabel4
             // 
@@ -150,7 +204,7 @@
             panel2.Location = new Point(230, 91);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(581, 287);
+            panel2.Size = new Size(581, 289);
             panel2.TabIndex = 3;
             // 
             // button3
@@ -159,10 +213,10 @@
             button3.BackColor = Color.DarkOrange;
             button3.Font = new Font("Candara", 12F, FontStyle.Bold);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(440, 254);
+            button3.Location = new Point(440, 256);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(130, 23);
+            button3.Size = new Size(130, 31);
             button3.TabIndex = 12;
             button3.Text = "EnrollStudent";
             button3.UseVisualStyleBackColor = false;
@@ -173,10 +227,10 @@
             AddQuestionsBtn.BackColor = Color.DarkOrange;
             AddQuestionsBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
             AddQuestionsBtn.ForeColor = Color.White;
-            AddQuestionsBtn.Location = new Point(6, 254);
+            AddQuestionsBtn.Location = new Point(6, 256);
             AddQuestionsBtn.Margin = new Padding(3, 2, 3, 2);
             AddQuestionsBtn.Name = "AddQuestionsBtn";
-            AddQuestionsBtn.Size = new Size(121, 23);
+            AddQuestionsBtn.Size = new Size(121, 33);
             AddQuestionsBtn.TabIndex = 11;
             AddQuestionsBtn.Text = "AddQuestions";
             AddQuestionsBtn.UseVisualStyleBackColor = false;
@@ -188,10 +242,10 @@
             button1.BackColor = Color.DarkOrange;
             button1.Font = new Font("Candara", 12F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(150, 254);
+            button1.Location = new Point(150, 256);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(106, 23);
+            button1.Size = new Size(106, 31);
             button1.TabIndex = 10;
             button1.Text = "Delete";
             button1.UseVisualStyleBackColor = false;
@@ -203,10 +257,10 @@
             generateBtn.BackColor = Color.DarkOrange;
             generateBtn.Font = new Font("Candara", 12F, FontStyle.Bold);
             generateBtn.ForeColor = Color.White;
-            generateBtn.Location = new Point(295, 254);
+            generateBtn.Location = new Point(295, 256);
             generateBtn.Margin = new Padding(3, 2, 3, 2);
             generateBtn.Name = "generateBtn";
-            generateBtn.Size = new Size(130, 23);
+            generateBtn.Size = new Size(130, 31);
             generateBtn.TabIndex = 9;
             generateBtn.Text = "Generate Exam";
             generateBtn.UseVisualStyleBackColor = false;
@@ -337,7 +391,7 @@
             button2.Location = new Point(35, 54);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(162, 23);
+            button2.Size = new Size(162, 33);
             button2.TabIndex = 12;
             button2.Text = "Add New Course";
             button2.UseVisualStyleBackColor = false;
@@ -396,5 +450,8 @@
         private Button button2;
         private Button button3;
         private LinkLabel linkLabel4;
+        private LinkLabel AddInstructor_btn;
+        private LinkLabel AddDept_btn;
+        private LinkLabel linkLabel5;
     }
 }

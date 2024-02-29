@@ -15,175 +15,172 @@ GO
 IF  EXISTS (SELECT * FROM sys.fn_listextendedproperty(N'MS_Description' , N'SCHEMA',N'dbo', N'TABLE',N'Answer', N'COLUMN',N'ModelAnswer'))
 EXEC sys.sp_dropextendedproperty @name=N'MS_Description' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Answer', @level2type=N'COLUMN',@level2name=N'ModelAnswer'
 GO
-/****** Object:  Trigger [TIOD_PreventDeletionOfTakenExamQuestions]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Trigger [TIOD_PreventDeletionOfTakenExamQuestions]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TRIGGER IF EXISTS [dbo].[TIOD_PreventDeletionOfTakenExamQuestions]
 GO
-/****** Object:  Trigger [UpdateExam]    Script Date: 2/27/2024 6:31:03 PM ******/
-DROP TRIGGER IF EXISTS [dbo].[UpdateExam]
-GO
-/****** Object:  Trigger [TIOD_PreventDeletionOfTakenExams]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Trigger [TIOD_PreventDeletionOfTakenExams]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TRIGGER IF EXISTS [dbo].[TIOD_PreventDeletionOfTakenExams]
 GO
-/****** Object:  Trigger [CheckExamInfo]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Trigger [CheckExamInfo]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TRIGGER IF EXISTS [dbo].[CheckExamInfo]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateTopic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateTopic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[UpdateTopic]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateStudent]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateStudent]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[UpdateStudent]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateInstructorByID]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateInstructorByID]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[UpdateInstructorByID]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[UpdateCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[Un_EnrollStudentInCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[Un_EnrollStudentInCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[Un_EnrollStudentInCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_TopicesInCourses]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_TopicesInCourses]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_TopicesInCourses]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_StudentAnswers]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_StudentAnswers]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_StudentAnswers]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginWithPassword]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginWithPassword]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginWithPassword]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginWithHash]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginWithHash]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginWithHash]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithPassword]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithPassword]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginAsStudentWithPassword]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithHash]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithHash]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginAsStudentWithHash]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithPassword]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithPassword]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginAsInstructorWithPassword]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithHash]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithHash]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_LoginAsInstructorWithHash]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetStudentsByDepartment]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetStudentsByDepartment]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_GetStudentsByDepartment]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetStudentGrades]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetStudentGrades]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_GetStudentGrades]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetCoursesByInstructor]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetCoursesByInstructor]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_GetCoursesByInstructor]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ExamQuestions]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_ExamQuestions]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_ExamQuestions]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CreateStudentAnswer]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_CreateStudentAnswer]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SP_CreateStudentAnswer]
 GO
-/****** Object:  StoredProcedure [dbo].[SelectTopics]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectTopics]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SelectTopics]
 GO
-/****** Object:  StoredProcedure [dbo].[SelectTopic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectTopic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SelectTopic]
 GO
-/****** Object:  StoredProcedure [dbo].[SelectStudents]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectStudents]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SelectStudents]
 GO
-/****** Object:  StoredProcedure [dbo].[SelectStudent]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectStudent]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SelectStudent]
 GO
-/****** Object:  StoredProcedure [dbo].[ReadTopic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[ReadTopic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ReadTopic]
 GO
-/****** Object:  StoredProcedure [dbo].[insertNewQuestion]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[insertNewQuestion]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[insertNewQuestion]
 GO
-/****** Object:  StoredProcedure [dbo].[InsertInstructorWithCourses]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertInstructorWithCourses]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[InsertInstructorWithCourses]
 GO
-/****** Object:  StoredProcedure [dbo].[InsertCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[InsertCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[insertChoice]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[insertChoice]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[insertChoice]
 GO
-/****** Object:  StoredProcedure [dbo].[GetTotalTimeForExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetTotalTimeForExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetTotalTimeForExam]
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentCourses]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentCourses]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetStudentCourses]
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentAnswerInExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentAnswerInExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetStudentAnswerInExam]
 GO
-/****** Object:  StoredProcedure [dbo].[GetQuestionsForExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetQuestionsForExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetQuestionsForExam]
 GO
-/****** Object:  StoredProcedure [dbo].[GetInstructorCoursesByID]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetInstructorCoursesByID]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetInstructorCoursesByID]
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamQuestionsNum]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamQuestionsNum]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetExamQuestionsNum]
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamInfoForStudent]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamInfoForStudent]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetExamInfoForStudent]
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamHistory]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamHistory]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetExamHistory]
 GO
-/****** Object:  StoredProcedure [dbo].[GetExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetExam]
 GO
-/****** Object:  StoredProcedure [dbo].[GetCoursesTaughtByInstructor]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetCoursesTaughtByInstructor]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetCoursesTaughtByInstructor]
 GO
-/****** Object:  StoredProcedure [dbo].[GetChoicesForQuestion]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetChoicesForQuestion]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetChoicesForQuestion]
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllInstructors]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllInstructors]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetAllInstructors]
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllDepartments]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllDepartments]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetAllDepartments]
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllCoursesForStudent]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllCoursesForStudent]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetAllCoursesForStudent]
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllCourses]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllCourses]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[GetAllCourses]
 GO
-/****** Object:  StoredProcedure [dbo].[ExamGeneration]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[ExamGeneration]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ExamGeneration]
 GO
-/****** Object:  StoredProcedure [dbo].[EnrollStudentInCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[EnrollStudentInCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[EnrollStudentInCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteTopic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteTopic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[DeleteTopic]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteStudent]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteStudent]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[DeleteStudent]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteInstructorToCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteInstructorToCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[DeleteInstructorToCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteInstructorByID]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteInstructorByID]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[DeleteInstructorByID]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[DeleteCourse]
 GO
-/****** Object:  StoredProcedure [dbo].[CreateTopic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[CreateTopic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CreateTopic]
 GO
-/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CorrectExam]
 GO
-/****** Object:  StoredProcedure [dbo].[checkStudentHaveExam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[checkStudentHaveExam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[checkStudentHaveExam]
 GO
-/****** Object:  StoredProcedure [dbo].[AssignInstructorToCourse]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  StoredProcedure [dbo].[AssignInstructorToCourse]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[AssignInstructorToCourse]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Student]') AND type in (N'U'))
@@ -327,100 +324,100 @@ GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Answer]') AND type in (N'U'))
 ALTER TABLE [dbo].[Answer] DROP CONSTRAINT IF EXISTS [DF_Answer_Grade]
 GO
-/****** Object:  Index [UQ_UserAccount_UserName]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Index [UQ_UserAccount_UserName]    Script Date: 2/29/2024 1:55:15 AM ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserAccount]') AND type in (N'U'))
 ALTER TABLE [dbo].[UserAccount] DROP CONSTRAINT IF EXISTS [UQ_UserAccount_UserName]
 GO
-/****** Object:  Table [dbo].[UserAccountType]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[UserAccountType]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[UserAccountType]
 GO
-/****** Object:  Table [dbo].[UserAccount]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[UserAccount]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[UserAccount]
 GO
-/****** Object:  Table [dbo].[TopicQuestions]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[TopicQuestions]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[TopicQuestions]
 GO
-/****** Object:  Table [dbo].[Topic]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Topic]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Topic]
 GO
-/****** Object:  Table [dbo].[Teaches]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Teaches]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Teaches]
 GO
-/****** Object:  Table [dbo].[Student]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Student]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Student]
 GO
-/****** Object:  Table [dbo].[QuestionType]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[QuestionType]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[QuestionType]
 GO
-/****** Object:  Table [dbo].[QuestionDifficulty]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[QuestionDifficulty]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[QuestionDifficulty]
 GO
-/****** Object:  Table [dbo].[Question]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Question]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Question]
 GO
-/****** Object:  Table [dbo].[InstructorRole]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[InstructorRole]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[InstructorRole]
 GO
-/****** Object:  Table [dbo].[Instructor]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Instructor]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Instructor]
 GO
-/****** Object:  Table [dbo].[ExamQuestions]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[ExamQuestions]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[ExamQuestions]
 GO
-/****** Object:  Table [dbo].[Exam]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Exam]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Exam]
 GO
-/****** Object:  Table [dbo].[DepartmentCourses]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[DepartmentCourses]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[DepartmentCourses]
 GO
-/****** Object:  Table [dbo].[Department]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Department]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Department]
 GO
-/****** Object:  Table [dbo].[Choice]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Choice]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Choice]
 GO
-/****** Object:  Table [dbo].[Answer]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Answer]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Answer]
 GO
-/****** Object:  View [dbo].[CourseView]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  View [dbo].[CourseView]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP VIEW IF EXISTS [dbo].[CourseView]
 GO
-/****** Object:  Table [dbo].[EnrollsIn]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[EnrollsIn]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[EnrollsIn]
 GO
-/****** Object:  Table [dbo].[Course]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Table [dbo].[Course]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TABLE IF EXISTS [dbo].[Course]
 GO
-/****** Object:  UserDefinedFunction [dbo].[ifTeach]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[ifTeach]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP FUNCTION IF EXISTS [dbo].[ifTeach]
 GO
-/****** Object:  UserDefinedFunction [dbo].[ifEnroll]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[ifEnroll]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP FUNCTION IF EXISTS [dbo].[ifEnroll]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FnS_SHA256NVARCHAR]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FnS_SHA256NVARCHAR]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP FUNCTION IF EXISTS [dbo].[FnS_SHA256NVARCHAR]
 GO
-/****** Object:  UserDefinedFunction [dbo].[checkTimeConflict]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[checkTimeConflict]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP FUNCTION IF EXISTS [dbo].[checkTimeConflict]
 GO
-/****** Object:  UserDefinedTableType [dbo].[StudentAnswer]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedTableType [dbo].[StudentAnswer]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TYPE IF EXISTS [dbo].[StudentAnswer]
 GO
-/****** Object:  UserDefinedTableType [dbo].[CourseIDList]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  UserDefinedTableType [dbo].[CourseIDList]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP TYPE IF EXISTS [dbo].[CourseIDList]
 GO
-/****** Object:  User [Instructor]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  User [Instructor]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP USER IF EXISTS [Instructor]
 GO
-/****** Object:  User [Student]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  User [Student]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP USER IF EXISTS [Student]
 GO
 USE [master]
 GO
-/****** Object:  Database [RandomExamGenerator]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Database [RandomExamGenerator]    Script Date: 2/29/2024 1:55:15 AM ******/
 DROP DATABASE IF EXISTS [RandomExamGenerator]
 GO
-/****** Object:  Database [RandomExamGenerator]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  Database [RandomExamGenerator]    Script Date: 2/29/2024 1:55:15 AM ******/
 CREATE DATABASE [RandomExamGenerator]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -505,10 +502,10 @@ ALTER DATABASE [RandomExamGenerator] SET QUERY_STORE (OPERATION_MODE = READ_WRIT
 GO
 USE [RandomExamGenerator]
 GO
-/****** Object:  User [Student]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  User [Student]    Script Date: 2/29/2024 1:55:15 AM ******/
 CREATE USER [Student] FOR LOGIN [Student] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  User [Instructor]    Script Date: 2/27/2024 6:31:03 PM ******/
+/****** Object:  User [Instructor]    Script Date: 2/29/2024 1:55:15 AM ******/
 CREATE USER [Instructor] FOR LOGIN [Instructor] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_datareader] ADD MEMBER [Student]
@@ -517,18 +514,18 @@ ALTER ROLE [db_datawriter] ADD MEMBER [Student]
 GO
 ALTER ROLE [db_owner] ADD MEMBER [Instructor]
 GO
-/****** Object:  UserDefinedTableType [dbo].[CourseIDList]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedTableType [dbo].[CourseIDList]    Script Date: 2/29/2024 1:55:16 AM ******/
 CREATE TYPE [dbo].[CourseIDList] AS TABLE(
 	[CourseID] [int] NULL
 )
 GO
-/****** Object:  UserDefinedTableType [dbo].[StudentAnswer]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedTableType [dbo].[StudentAnswer]    Script Date: 2/29/2024 1:55:16 AM ******/
 CREATE TYPE [dbo].[StudentAnswer] AS TABLE(
 	[QuestionID] [int] NULL,
 	[SAnswer] [int] NULL
 )
 GO
-/****** Object:  UserDefinedFunction [dbo].[checkTimeConflict]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[checkTimeConflict]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -542,7 +539,7 @@ BEGIN
 										)THEN 1 ELSE 0 END);
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[FnS_SHA256NVARCHAR]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FnS_SHA256NVARCHAR]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -569,7 +566,7 @@ BEGIN
 
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[ifEnroll]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[ifEnroll]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -581,7 +578,7 @@ BEGIN
     RETURN (SELECT CASE WHEN EXISTS(SELECT * FROM EnrollsIn WHERE StudentID = @studId AND CourseID = @CourseId) THEN 1 ELSE 0 END);
 END;
 GO
-/****** Object:  UserDefinedFunction [dbo].[ifTeach]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[ifTeach]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -593,7 +590,7 @@ BEGIN
     RETURN (SELECT CASE WHEN EXISTS(SELECT * FROM Teaches WHERE InstructorID = @instId AND CourseID = @CourseId) THEN 1 ELSE 0 END);
 END;
 GO
-/****** Object:  Table [dbo].[Course]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Course]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -607,7 +604,7 @@ CREATE TABLE [dbo].[Course](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EnrollsIn]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[EnrollsIn]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -628,7 +625,7 @@ CREATE TABLE [dbo].[EnrollsIn](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[CourseView]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  View [dbo].[CourseView]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -640,7 +637,7 @@ FROM Course C JOIN EnrollsIn S
 ON C.ID = S.CourseID
 GROUP BY C.Name;
 GO
-/****** Object:  Table [dbo].[Answer]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Answer]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -660,7 +657,7 @@ CREATE TABLE [dbo].[Answer](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Choice]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Choice]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -677,7 +674,7 @@ CREATE TABLE [dbo].[Choice](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Department]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Department]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -692,7 +689,7 @@ CREATE TABLE [dbo].[Department](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DepartmentCourses]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[DepartmentCourses]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -707,7 +704,7 @@ CREATE TABLE [dbo].[DepartmentCourses](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Exam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Exam]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -730,7 +727,7 @@ CREATE TABLE [dbo].[Exam](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ExamQuestions]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[ExamQuestions]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -745,7 +742,7 @@ CREATE TABLE [dbo].[ExamQuestions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Instructor]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Instructor]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -763,7 +760,7 @@ CREATE TABLE [dbo].[Instructor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InstructorRole]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[InstructorRole]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -776,7 +773,7 @@ CREATE TABLE [dbo].[InstructorRole](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Question]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Question]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -795,7 +792,7 @@ CREATE TABLE [dbo].[Question](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[QuestionDifficulty]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[QuestionDifficulty]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -808,7 +805,7 @@ CREATE TABLE [dbo].[QuestionDifficulty](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[QuestionType]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[QuestionType]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -821,7 +818,7 @@ CREATE TABLE [dbo].[QuestionType](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Student]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -839,7 +836,7 @@ CREATE TABLE [dbo].[Student](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Teaches]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Teaches]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -856,7 +853,7 @@ CREATE TABLE [dbo].[Teaches](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Topic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[Topic]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -871,7 +868,7 @@ CREATE TABLE [dbo].[Topic](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TopicQuestions]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[TopicQuestions]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -886,7 +883,7 @@ CREATE TABLE [dbo].[TopicQuestions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserAccount]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[UserAccount]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -902,7 +899,7 @@ CREATE TABLE [dbo].[UserAccount](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserAccountType]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Table [dbo].[UserAccountType]    Script Date: 2/29/2024 1:55:16 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1315,7 +1312,7 @@ INSERT [dbo].[Department] ([ID], [Name], [InstructorManagerID]) VALUES (11, N'Op
 GO
 SET IDENTITY_INSERT [dbo].[Department] OFF
 GO
-INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 1, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-10-01' AS Date), CAST(N'2023-10-20' AS Date), NULL, NULL)
+INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 1, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-10-01' AS Date), CAST(N'2023-10-20' AS Date), 0, 1)
 GO
 INSERT [dbo].[EnrollsIn] ([StudentID], [CourseID], [CourseActive], [EnrollDate], [StartDate], [EndDate], [IsPassed], [IsCorrective]) VALUES (6, 2, 1, CAST(N'2023-07-20' AS Date), CAST(N'2023-08-01' AS Date), CAST(N'2023-08-20' AS Date), NULL, NULL)
 GO
@@ -1789,7 +1786,7 @@ INSERT [dbo].[UserAccountType] ([UserAccountTypeID]) VALUES (N'student')
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ_UserAccount_UserName]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Index [UQ_UserAccount_UserName]    Script Date: 2/29/2024 1:55:16 AM ******/
 ALTER TABLE [dbo].[UserAccount] ADD  CONSTRAINT [UQ_UserAccount_UserName] UNIQUE NONCLUSTERED 
 (
 	[UserName] ASC
@@ -2011,7 +2008,7 @@ ALTER TABLE [dbo].[Student]  WITH CHECK ADD  CONSTRAINT [CK_Student_Gender] CHEC
 GO
 ALTER TABLE [dbo].[Student] CHECK CONSTRAINT [CK_Student_Gender]
 GO
-/****** Object:  StoredProcedure [dbo].[AssignInstructorToCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[AssignInstructorToCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2051,7 +2048,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[checkStudentHaveExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[checkStudentHaveExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2065,7 +2062,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[CorrectExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2080,7 +2077,7 @@ BEGIN
         DECLARE @StudentScore FLOAT
         DECLARE @StudentPercent FLOAT
 
-		select @TotalPoints = TotalPoints from Exam where ID = @ExamID
+		--select @TotalPoints = TotalPoints from Exam where ID = @ExamID
 
 		IF NOT EXISTS (SELECT 1 FROM Exam WHERE ID = @ExamID)
 		BEGIN
@@ -2090,16 +2087,16 @@ BEGIN
 		BEGIN
 		;THROW 51000, 'Invalid StudentID provided.', 1;
 		END
-        ---- Calculate TotalPoints
+        ---- Calculate Student Score
         SELECT @StudentScore = ISNULL(SUM(A.Grade), 0)
         FROM Answer A
         WHERE A.ExamID = @ExamID AND A.StudentID=@StudentID
 
-        -- Calculate StudentScore
-        --SELECT @StudentScore = ISNULL(SUM(CASE WHEN A.ModelAnswer = A.StudentAnswer THEN Q.Points ELSE 0 END), 0)
-        --FROM Answer A
-        --JOIN Question Q ON A.QuestionID = Q.ID
-        --WHERE A.ExamID = @ExamID AND A.StudentID=@StudentID;
+         --Calculate Total Points
+        SELECT @TotalPoints = Sum(Q.Points) 
+		from Question Q inner join ExamQuestions E       
+        on Q.ID = E.QuestionID
+        and E.ExamID = @ExamID 
 
         -- Calculate StudentPercent
         SELECT @StudentPercent = (@StudentScore / @TotalPoints);
@@ -2107,7 +2104,7 @@ BEGIN
         -- Update Exam table
         UPDATE Exam
         SET StudentScore = @StudentScore,
-			--TotalPoints = @TotalPoints,
+			TotalPoints = @TotalPoints,
             IsStudentPassed = CASE WHEN @StudentPercent >= SuccessPercent THEN 1 ELSE 0 END
         WHERE ID = @ExamID AND StudentID=@StudentID ;
 
@@ -2127,7 +2124,7 @@ BEGIN
 	
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[CreateTopic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[CreateTopic]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2166,7 +2163,7 @@ ELSE
 		END
 
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2213,7 +2210,7 @@ BEGIN
     END
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteInstructorByID]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteInstructorByID]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2233,7 +2230,7 @@ END TRY
 	ROLLBACK TRANSACTION;
 END CATCH
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteInstructorToCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteInstructorToCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2270,7 +2267,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteStudent]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteStudent]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2291,7 +2288,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteTopic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[DeleteTopic]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2346,7 +2343,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[EnrollStudentInCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[EnrollStudentInCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2400,7 +2397,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[ExamGeneration]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[ExamGeneration]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2445,7 +2442,7 @@ Create PROCEDURE [dbo].[ExamGeneration]
 	   SELECT @ifSucess As ifSuccess
     END
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllCourses]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllCourses]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2457,7 +2454,7 @@ AS
 select * from Course
 
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllCoursesForStudent]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllCoursesForStudent]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2469,7 +2466,7 @@ select C.* from EnrollsIn E inner join Student S
 on E.StudentID = S.ID inner join Course C
 on C.ID = E.CourseID where S.ID = @StudentID
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllDepartments]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllDepartments]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2480,7 +2477,7 @@ Create   Procedure [dbo].[GetAllDepartments]
 AS
 select * from Department;
 GO
-/****** Object:  StoredProcedure [dbo].[GetAllInstructors]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetAllInstructors]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2489,7 +2486,7 @@ CREATE   Procedure [dbo].[GetAllInstructors]
 AS
 select * from Instructor;
 GO
-/****** Object:  StoredProcedure [dbo].[GetChoicesForQuestion]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetChoicesForQuestion]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2500,7 +2497,7 @@ create proc [dbo].[GetChoicesForQuestion]
 as
 select C.* from Choice C inner join Question Q on C.QuestionID = Q.ID and Q.ID = @QuestionID
 GO
-/****** Object:  StoredProcedure [dbo].[GetCoursesTaughtByInstructor]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetCoursesTaughtByInstructor]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2518,7 +2515,7 @@ END;
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[GetExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2547,7 +2544,7 @@ inner join RandomExamGenerator.dbo.Question Q ON EQ.QuestionID = Q.ID
 where EQ.ExamID = @ExamID;
 
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamHistory]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamHistory]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2559,7 +2556,7 @@ as
 select*
 from Exam E where E.ID = @ExamID;
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamInfoForStudent]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamInfoForStudent]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2569,7 +2566,7 @@ CREATE proc [dbo].[GetExamInfoForStudent]
 as
 select * from Exam where StudentID = @StudentID and CourseID = @courseID
 GO
-/****** Object:  StoredProcedure [dbo].[GetExamQuestionsNum]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetExamQuestionsNum]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2587,7 +2584,7 @@ BEGIN
     RETURN @Num;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetInstructorCoursesByID]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetInstructorCoursesByID]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2602,7 +2599,7 @@ JOIN Course c
 on t.CourseID=c.ID
 WHERE t.InstructorID=@InstructorID;
 GO
-/****** Object:  StoredProcedure [dbo].[GetQuestionsForExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetQuestionsForExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2623,7 +2620,7 @@ from RandomExamGenerator.dbo.ExamQuestions EQ
 inner join RandomExamGenerator.dbo.Question Q ON EQ.QuestionID = Q.ID
 where EQ.ExamID = @ExamID;
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentAnswerInExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentAnswerInExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2636,7 +2633,7 @@ create proc [dbo].[GetStudentAnswerInExam]
 as
 select A.* from Answer A where A.StudentID = @studentID and A.ExamID = @examID and A.QuestionID = @questionID
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentCourses]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentCourses]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2650,7 +2647,7 @@ BEGIN
 	ON enrolls.StudentID=stud.ID and enrolls.CourseID=@CourseID
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetTotalTimeForExam]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetTotalTimeForExam]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2661,7 +2658,7 @@ create proc [dbo].[GetTotalTimeForExam]
 as
 select TotalTime from Exam where ID = @ExamID
 GO
-/****** Object:  StoredProcedure [dbo].[insertChoice]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[insertChoice]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2680,7 +2677,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[InsertCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2708,7 +2705,7 @@ BEGIN
     END
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertInstructorWithCourses]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[InsertInstructorWithCourses]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2750,7 +2747,7 @@ BEGIN
 	END CATCH
 END
 GO
-/****** Object:  StoredProcedure [dbo].[insertNewQuestion]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[insertNewQuestion]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2791,7 +2788,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[ReadTopic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[ReadTopic]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2835,7 +2832,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[SelectStudent]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectStudent]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2852,7 +2849,7 @@ BEGIN
     
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SelectStudents]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectStudents]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2870,7 +2867,7 @@ BEGIN
     
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SelectTopic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectTopic]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2885,7 +2882,7 @@ BEGIN
     
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SelectTopics]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SelectTopics]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2903,7 +2900,7 @@ BEGIN
     
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CreateStudentAnswer]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_CreateStudentAnswer]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2965,7 +2962,7 @@ begin
 end;
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ExamQuestions]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_ExamQuestions]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2989,7 +2986,7 @@ BEGIN
     ORDER BY quest.ID;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetCoursesByInstructor]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetCoursesByInstructor]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3012,7 +3009,7 @@ BEGIN
 END;
 ---EXEC SP_GetCoursesByInstructor @InstructorID = 1;
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetStudentGrades]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetStudentGrades]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3031,7 +3028,7 @@ END;
 
 ----EXEC SP_GetStudentGrades @StudentID = 6;
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GetStudentsByDepartment]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetStudentsByDepartment]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3046,7 +3043,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithHash]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithHash]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3078,7 +3075,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithPassword]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsInstructorWithPassword]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3110,7 +3107,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithHash]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithHash]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3142,7 +3139,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithPassword]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginAsStudentWithPassword]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3174,7 +3171,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginWithHash]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginWithHash]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3200,7 +3197,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_LoginWithPassword]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_LoginWithPassword]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3226,7 +3223,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_StudentAnswers]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_StudentAnswers]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3257,7 +3254,7 @@ BEGIN
     JOIN Question quest ON quest.ID = ans.QuestionID;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[SP_TopicesInCourses]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_TopicesInCourses]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3272,7 +3269,7 @@ Create    PROC [dbo].[SP_TopicesInCourses]
 as
 select [Name] AS Topic_Name from Topic where CourseID = @CourseID
 GO
-/****** Object:  StoredProcedure [dbo].[Un_EnrollStudentInCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[Un_EnrollStudentInCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3323,7 +3320,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateCourse]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateCourse]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3370,7 +3367,7 @@ BEGIN
     END
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateInstructorByID]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateInstructorByID]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3412,7 +3409,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateStudent]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateStudent]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3434,7 +3431,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateTopic]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[UpdateTopic]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3480,7 +3477,7 @@ ELSE
 		END
 
 GO
-/****** Object:  Trigger [dbo].[CheckExamInfo]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Trigger [dbo].[CheckExamInfo]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3507,7 +3504,7 @@ END
 GO
 ALTER TABLE [dbo].[Exam] ENABLE TRIGGER [CheckExamInfo]
 GO
-/****** Object:  Trigger [dbo].[TIOD_PreventDeletionOfTakenExams]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Trigger [dbo].[TIOD_PreventDeletionOfTakenExams]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3583,34 +3580,7 @@ END
 GO
 ALTER TABLE [dbo].[Exam] ENABLE TRIGGER [TIOD_PreventDeletionOfTakenExams]
 GO
-/****** Object:  Trigger [dbo].[UpdateExam]    Script Date: 2/27/2024 6:31:04 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-Create TRIGGER [dbo].[UpdateExam]
-ON [dbo].[Exam]
-for UPDATE
-AS
-BEGIN
-     SET NOCOUNT ON;
-     BEGIN TRAN     
-	 IF UPDATE(ScheduledTime)
-		 BEGIN 
-			    if(NOT EXISTS( SELECT ScheduledTime
-				               FROM inserted
-				               WHERE (dbo.checkTimeConflict(StudentID, CourseID, ScheduledTime, DATEADD(SECOND, TotalTime, ScheduledTime)) =1)))
-				    Begin rollback END;
-		 END
-	 ELSE 
-	    rollback;
-     COMMIT TRAN
-END;
-GO
-ALTER TABLE [dbo].[Exam] ENABLE TRIGGER [UpdateExam]
-GO
-/****** Object:  Trigger [dbo].[TIOD_PreventDeletionOfTakenExamQuestions]    Script Date: 2/27/2024 6:31:04 PM ******/
+/****** Object:  Trigger [dbo].[TIOD_PreventDeletionOfTakenExamQuestions]    Script Date: 2/29/2024 1:55:17 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

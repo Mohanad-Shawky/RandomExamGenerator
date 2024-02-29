@@ -44,10 +44,11 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 28);
+            dataGridView1.Location = new Point(0, 24);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(678, 422);
+            dataGridView1.Size = new Size(593, 314);
             dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
@@ -57,7 +58,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(678, 28);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(593, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -65,14 +67,14 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem, saveToolStripMenuItem, DeleteStudentToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(77, 24);
+            fileToolStripMenuItem.Size = new Size(62, 20);
             fileToolStripMenuItem.Text = "Manage";
             // 
             // loadToolStripMenuItem
             // 
             loadToolStripMenuItem.BackColor = Color.Yellow;
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.Size = new Size(215, 26);
+            loadToolStripMenuItem.Size = new Size(174, 22);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
@@ -80,7 +82,7 @@
             // 
             saveToolStripMenuItem.BackColor = Color.Lime;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(215, 26);
+            saveToolStripMenuItem.Size = new Size(174, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -88,31 +90,32 @@
             // 
             DeleteStudentToolStripMenuItem.BackColor = Color.FromArgb(255, 128, 0);
             DeleteStudentToolStripMenuItem.Name = "DeleteStudentToolStripMenuItem";
-            DeleteStudentToolStripMenuItem.Size = new Size(215, 26);
+            DeleteStudentToolStripMenuItem.Size = new Size(174, 22);
             DeleteStudentToolStripMenuItem.Text = "Insert UserAccount";
             DeleteStudentToolStripMenuItem.Click += DeleteStudentToolStripMenuItem_Click;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = SystemColors.HotTrack;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(222, 0);
+            label1.Location = new Point(194, 0);
             label1.Name = "label1";
-            label1.Size = new Size(130, 28);
+            label1.Size = new Size(102, 21);
             label1.TabIndex = 2;
             label1.Text = "Student Table";
             // 
             // ManageStudents
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(678, 450);
+            ClientSize = new Size(593, 338);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ManageStudents";
             Text = "ManageStudents";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
