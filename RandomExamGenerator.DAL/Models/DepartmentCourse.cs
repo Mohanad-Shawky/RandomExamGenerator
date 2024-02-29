@@ -8,19 +8,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RandomExamGenerator.DAL.Models;
 
-[Keyless]
-[Table("TaughtIn")]
-public partial class TaughtIn
+[PrimaryKey("DepartmentId", "CourseId")]
+public partial class DepartmentCourse
 {
+    [Key]
+    [Column("DepartmentID")]
+    public int DepartmentId { get; set; }
+
+    [Key]
     [Column("CourseID")]
     public int CourseId { get; set; }
 
-    [Column("TrackID")]
-    public int TrackId { get; set; }
-
     [ForeignKey("CourseId")]
+    [InverseProperty("DepartmentCourses")]
     public virtual Course Course { get; set; } = null!;
 
-    [ForeignKey("TrackId")]
-    public virtual Track Track { get; set; } = null!;
+    [ForeignKey("DepartmentId")]
+    [InverseProperty("DepartmentCourses")]
+    public virtual Department Department { get; set; } = null!;
 }

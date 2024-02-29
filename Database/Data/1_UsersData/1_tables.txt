@@ -1,0 +1,5 @@
+dbo.UserAccount
+dbo.UserAccountType
+dbo.Instructor
+dbo.InstructorRole
+dbo.Student

@@ -25,4 +25,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RandomExamGenerator.DAL\RandomExamGenerator.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

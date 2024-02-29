@@ -1,0 +1,6 @@
+dbo.Course
+dbo.Department
+dbo.EnrollsIn
+dbo.DepartmentCourses
+dbo.Teaches
+dbo.Topic

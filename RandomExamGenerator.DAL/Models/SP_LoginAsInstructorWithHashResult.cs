@@ -14,5 +14,6 @@ namespace RandomExamGenerator.DAL.Models
         public string Role { get; set; } = default!;
         public string Gender { get; set; } = default!;
         public int DepartmentID { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

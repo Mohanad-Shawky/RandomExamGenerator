@@ -16,9 +16,6 @@ public partial class QuestionDifficulty
     [StringLength(20)]
     public string QuestionDifficultyId { get; set; } = null!;
 
-    [InverseProperty("QuestionDifficultyNavigation")]
-    public virtual ICollection<ExamConfiguration> ExamConfigurations { get; set; } = new List<ExamConfiguration>();
-
     [InverseProperty("DifficultyNavigation")]
     public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
 }

@@ -9,14 +9,6 @@ namespace RandomExamGenerator.DAL.Context;
 
 public partial class RandomExamGeneratorContext : DbContext
 {
-    public RandomExamGeneratorContext()
-    {
-    }
-
-    public RandomExamGeneratorContext(DbContextOptions<RandomExamGeneratorContext> options)
-        : base(options)
-    {
-    }
 
     public virtual DbSet<Answer> Answers { get; set; }
 
@@ -28,11 +20,11 @@ public partial class RandomExamGeneratorContext : DbContext
 
     public virtual DbSet<Department> Departments { get; set; }
 
+    public virtual DbSet<DepartmentCourse> DepartmentCourses { get; set; }
+
     public virtual DbSet<EnrollsIn> EnrollsIns { get; set; }
 
     public virtual DbSet<Exam> Exams { get; set; }
-
-    public virtual DbSet<ExamConfiguration> ExamConfigurations { get; set; }
 
     public virtual DbSet<ExamQuestion> ExamQuestions { get; set; }
 
@@ -48,15 +40,11 @@ public partial class RandomExamGeneratorContext : DbContext
 
     public virtual DbSet<Student> Students { get; set; }
 
-    public virtual DbSet<TaughtIn> TaughtIns { get; set; }
-
     public virtual DbSet<Teach> Teaches { get; set; }
 
     public virtual DbSet<Topic> Topics { get; set; }
 
     public virtual DbSet<TopicQuestion> TopicQuestions { get; set; }
-
-    public virtual DbSet<Track> Tracks { get; set; }
 
     public virtual DbSet<UserAccount> UserAccounts { get; set; }
 
@@ -102,6 +90,17 @@ public partial class RandomExamGeneratorContext : DbContext
             entity.HasOne(d => d.InstructorManager).WithMany(p => p.Departments).HasConstraintName("FK_Department_Has_Instructor_Manager");
         });
 
+        modelBuilder.Entity<DepartmentCourse>(entity =>
+        {
+            entity.HasOne(d => d.Course).WithMany(p => p.DepartmentCourses)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_DepartmentCourses_Course");
+
+            entity.HasOne(d => d.Department).WithMany(p => p.DepartmentCourses)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_DepartmentCourses_Department");
+        });
+
         modelBuilder.Entity<EnrollsIn>(entity =>
         {
             entity.Property(e => e.IsPassed).HasDefaultValueSql("(NULL)");
@@ -139,15 +138,6 @@ public partial class RandomExamGeneratorContext : DbContext
             entity.HasOne(d => d.Student).WithMany(p => p.Exams)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Exam_Student");
-        });
-
-        modelBuilder.Entity<ExamConfiguration>(entity =>
-        {
-            entity.HasOne(d => d.Exam).WithMany(p => p.ExamConfigurations).HasConstraintName("FK_ExamConfiguration_Exam");
-
-            entity.HasOne(d => d.QuestionDifficultyNavigation).WithMany(p => p.ExamConfigurations)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ExamConfiguration_QuestionDifficulty");
         });
 
         modelBuilder.Entity<ExamQuestion>(entity =>
@@ -196,19 +186,11 @@ public partial class RandomExamGeneratorContext : DbContext
         modelBuilder.Entity<Student>(entity =>
         {
             entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.DepartmentId).HasDefaultValueSql("(NULL)");
 
-            entity.HasOne(d => d.IdNavigation).WithOne(p => p.Student).HasConstraintName("FK_Student_UserAccount");
-        });
-
-        modelBuilder.Entity<TaughtIn>(entity =>
-        {
-            entity.HasOne(d => d.Course).WithMany()
+            entity.HasOne(d => d.Department).WithMany(p => p.Students)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TaughtIn_Course");
-
-            entity.HasOne(d => d.Track).WithMany()
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TaughtIn_Track");
+                .HasConstraintName("FK_Student_Department");
         });
 
         modelBuilder.Entity<Teach>(entity =>
@@ -238,15 +220,6 @@ public partial class RandomExamGeneratorContext : DbContext
             entity.HasOne(d => d.Topic).WithMany(p => p.TopicQuestions)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TopicQuestions_Topic");
-        });
-
-        modelBuilder.Entity<Track>(entity =>
-        {
-            entity.HasOne(d => d.Department).WithMany(p => p.Tracks).HasConstraintName("FK_Track_Department");
-
-            entity.HasOne(d => d.InstructorSupervisorNavigation).WithMany(p => p.Tracks)
-                .OnDelete(DeleteBehavior.SetNull)
-                .HasConstraintName("FK_Track_Instructor_Supervisor");
         });
 
         modelBuilder.Entity<UserAccount>(entity =>

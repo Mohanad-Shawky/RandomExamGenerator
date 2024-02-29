@@ -27,6 +27,8 @@ public partial class Instructor
     [Column("DepartmentID")]
     public int DepartmentId { get; set; }
 
+    public bool IsDeleted { get; set; }
+
     [ForeignKey("DepartmentId")]
     [InverseProperty("Instructors")]
     public virtual Department Department { get; set; } = null!;
@@ -47,7 +49,4 @@ public partial class Instructor
 
     [InverseProperty("Instructor")]
     public virtual ICollection<Teach> Teaches { get; set; } = new List<Teach>();
-
-    [InverseProperty("InstructorSupervisorNavigation")]
-    public virtual ICollection<Track> Tracks { get; set; } = new List<Track>();
 }
