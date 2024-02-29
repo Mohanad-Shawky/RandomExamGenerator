@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using RandomExamGenerator.BLL;
+using RandomExamGenerator.BLL.Helpers;
 using RandomExamGenerator.DAL.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace RandomExamGenerator.WinFormsUI
@@ -39,7 +40,7 @@ namespace RandomExamGenerator.WinFormsUI
         private void button1_Click(object sender, EventArgs e)
         {
             // TODO: make stored procedure to insert the user account and hash the input password
-            user.PasswordHash = FormHelper.GetHash(FormHelper.sha256, CreatePassword.Text).ToUpper();
+            user.PasswordHash = UserHelper.GetHash(UserHelper.sha256, CreatePassword.Text).ToUpper();
 
             UserAccount newStudent = new UserAccount();
             newStudent.UserName = user.UserName;

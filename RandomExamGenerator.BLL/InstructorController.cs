@@ -1,3 +1,4 @@
+using RandomExamGenerator.BLL.Helpers;
 using RandomExamGenerator.DAL.Models;
 
 namespace RandomExamGenerator.BLL;
@@ -37,7 +38,7 @@ public class InstructorController:BaseController
 
         var task = Task.Run(async () => await ContextProcedures.InsertInstructorWithCoursesAsync(
             UserName: instructor.Name,
-            PasswordHash: password.GetHashCode().ToString(),
+            PasswordHash: UserHelper.GetHash(UserHelper.sha256, password).ToUpper(),
             Role: instructor.Role,
             Gender: instructor.Gender,
             DepartmentID: instructor.DepartmentId,
